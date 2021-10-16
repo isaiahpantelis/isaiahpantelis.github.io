@@ -1,1 +1,1 @@
-*Under construction*
+*Lorem ipsum dolor sit amet*
