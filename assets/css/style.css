@@ -37,6 +37,7 @@ a {
 a:hover {
     color: white;
 }
-a:visited {
-    color: lightgrey;
+a:visited, a:link, a:active {
+    color: lightgrey !important;
+    text-decoration: none;
 }
