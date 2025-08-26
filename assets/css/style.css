@@ -30,3 +30,10 @@ h1, h2, h3, h4, h5, h6 {
 p {
     line-height: 1.6;
 }
+
+a {
+    color: lightgrey;
+}
+a:hover {
+    color: white;
+}
