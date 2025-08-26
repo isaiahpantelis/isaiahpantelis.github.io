@@ -1,3 +1,1 @@
-layout: default
-
 *Lorem ipsum dolor sit amet*
