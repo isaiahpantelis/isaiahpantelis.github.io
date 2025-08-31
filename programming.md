@@ -15,8 +15,9 @@ Encapsulation is a design principle in object-oriented programming (OOP) that pr
 - code reuse in constructors
 - less visual clutter
 
+A class that uses public fields:
+
 ```csharp
-// -- A class that uses public fields. -- //
 class Instrument
 {
     public int ID;  // -- Using int for compatibility with CLS and various APIs. But should be non-negative.
@@ -32,8 +33,9 @@ class Instrument
 }
 ```
 
+A class that uses properties to encapsulate its fields:
+
 ```csharp
-// -- A class that uses properties to encapsulate its fields. -- //
 class Product
 {
     private int _ID;
