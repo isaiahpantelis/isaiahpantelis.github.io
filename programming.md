@@ -150,3 +150,65 @@ Unhandled exception. System.ArgumentException: CUSIP must be 8 characters long.
    at Properties.Program.Product.set_CUSIP(String value) in /Users/pdawg/Projects/CSharp/BabySteps/Properties/Program.cs:line 64
    at Properties.Program.Main(String[] args) in /Users/pdawg/Projects/CSharp/BabySteps/Properties/Program.cs:line 129
 ```
+
+## Nullable types
+In a database, there can be compelling reasons for defining a field/column as `nullable`. However, a value type in C# can only assume any one of the values in the permissible range of the type; for example, an `int` can only assume one of the values in the range of `int`. To address this and many other issues, `Nullable<T>` extends the range of values of the type `T` to include the value `null`.
+
+```csharp
+class Program
+{
+
+    class DBReader
+    {
+        public int? ID { get; set; }
+        public bool? Valid { get; set; }
+    }
+
+    static void Main(string[] args)
+    {
+        // -- Illegal: `id` can only take one of the values in the range of the `int` type. -- //
+        // int id = null;  // -- will not compile
+        
+        // -- Nullable<T> is a type that extends the range of `T` to include the value `null` -- //
+        Nullable<int> smart_id = null;
+        
+        Console.WriteLine(smart_id == null);
+        Console.WriteLine(smart_id.HasValue);
+        
+        // -- More compact syntax -- //
+        int? smarter_id = null;
+        
+        Console.WriteLine(smarter_id == null);
+        Console.WriteLine(smarter_id.HasValue);
+        
+        // -- Of course, it works with arrays too. -- //
+        int?[] arrayOfNullableInts = new int?[10];
+        
+        foreach (var item in arrayOfNullableInts)
+        {
+            Console.WriteLine(item ?? 0);  // -- null-coallescing operator
+        }
+        
+        // -- Assignment -- //
+        int? initially_null_int = null;
+        initially_null_int ??= 42;
+        initially_null_int ??= 667;
+        
+        // -- What is the output? -- //
+        Console.WriteLine(initially_null_int);
+        
+        // -- Null-conditional + null-coallescing -- //
+        Console.WriteLine($"Number of input arguments: {args?.Length ?? 0}\n"); 
+       
+        // -- Properties work with nullable types (imagine if it were otherwise...) -- //
+        var db_reader = new DBReader();
+        var id = db_reader.ID;
+        var valid = db_reader.Valid;
+
+        // -- No error: `new_id` is deduced to be of type `int?` with value `null`.
+        var new_id = id + 1;
+
+         Console.WriteLine(new_id);
+    }
+}
+```
