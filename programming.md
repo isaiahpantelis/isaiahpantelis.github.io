@@ -13,7 +13,7 @@ Encapsulation is a design principle in object-oriented programming (OOP) that pr
 - encapsulation
 - data validation
 - code reuse in constructors
-- less visual clutter
+- less visual clutter at the point of use
 
 A class that uses public fields:
 
@@ -111,5 +111,32 @@ class Product
     {
         return $"Product(ID={ID}, CUSIP={CUSIP}, ISIN={ISIN}, PARSEKEYABLE={PARSEKEYABLE},  Blob={Blob})";
     }
+}
+```
+
+Public attributes are the Wild West. Properties provide extra sweet syntactic sugar (in addition to the benefits listed above):
+
+```csharp
+class Program
+{
+
+    static void Main(string[] args)
+    {
+        
+        // -- Create a new instrument. Set fields to illegal values. Anything goes.
+        var bond = new Instrument { ID = -1, CUSIP = "say", ISIN = "what", PARSEKEYABLE = "now?" };
+        Console.WriteLine(bond.ToString());
+        
+        // -- All commented out definitions will throw an exception.
+        // var loan = new Product {ID = -1, CUSIP = "say", ISIN = "what", PARSEKEYABLE = "now?"};
+        // var loan = new Product {ID = 42, CUSIP = "say", ISIN = "what", PARSEKEYABLE = "now?"};
+        // var loan = new Product {ID = 42, CUSIP = "XS123456", ISIN = "what", PARSEKEYABLE = "now?"};
+        // -- This definition meets all the constraints:
+        var loan = new Product(42, "XS123456", "XS123456789", "B12345\tCode", "Lorem ipsum");
+        Console.WriteLine(loan.ToString());
+        // -- The beauty of properties: concise method invocation, as if accessing a public attribute.
+        loan.CUSIP += "7";  // -- This will throw an exception because `CUSIP` has to be 8-characters long.
+    }
+    
 }
 ```
