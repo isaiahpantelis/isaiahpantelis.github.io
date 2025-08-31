@@ -151,7 +151,8 @@ Unhandled exception. System.ArgumentException: CUSIP must be 8 characters long.
    at Properties.Program.Main(String[] args) in /Users/pdawg/Projects/CSharp/BabySteps/Properties/Program.cs:line 129
 ```
 
-## Nullable types
+## Core language
+### Nullable types
 In a database, there can be compelling reasons for defining a field/column as `nullable`. However, a value type in C# can only assume any one of the values in the permissible range of the type; for example, an `int` can only assume one of the values in the range of `int`. To address this and many other issues, `Nullable<T>` extends the range of values of the type `T` to include the value `null`.
 
 ```csharp
