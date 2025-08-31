@@ -4,6 +4,16 @@ title: Programming
 permalink: /programming
 ---
 
+# ToC
+- [C#](#c)
+  - [Encapsulation](#encapsulation)
+    - [Properties](#properties)
+  - [Core language](#core-language)
+    - [Nullable types](#nullable-types)
+
+<br>
+<br>
+
 # C#
 ## Encapsulation
 ### Properties
@@ -150,6 +160,8 @@ Unhandled exception. System.ArgumentException: CUSIP must be 8 characters long.
    at Properties.Program.Product.set_CUSIP(String value) in /Users/pdawg/Projects/CSharp/BabySteps/Properties/Program.cs:line 64
    at Properties.Program.Main(String[] args) in /Users/pdawg/Projects/CSharp/BabySteps/Properties/Program.cs:line 129
 ```
+
+<br>
 
 ## Core language
 ### Nullable types
