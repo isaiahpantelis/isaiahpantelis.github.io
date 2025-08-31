@@ -140,3 +140,13 @@ class Program
     
 }
 ```
+
+Output:
+
+```
+Instrument(ID=-1, CUSIP=say, ISIN=what, PARSEKEYABLE=now?)
+Product(ID=42, CUSIP=XS123456, ISIN=XS123456789, PARSEKEYABLE=B12345    Code,  Blob=Lorem ipsum)
+Unhandled exception. System.ArgumentException: CUSIP must be 8 characters long.
+   at Properties.Program.Product.set_CUSIP(String value) in /Users/pdawg/Projects/CSharp/BabySteps/Properties/Program.cs:line 64
+   at Properties.Program.Main(String[] args) in /Users/pdawg/Projects/CSharp/BabySteps/Properties/Program.cs:line 129
+```
