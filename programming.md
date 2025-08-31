@@ -11,8 +11,7 @@ permalink: /programming
   - [Core language](#core-language)
     - [Nullable types](#nullable-types)
 
-<br>
-<br>
+<hr>
 
 # C#
 ## Encapsulation
