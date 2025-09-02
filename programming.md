@@ -30,8 +30,8 @@ A class that uses public fields:
 class Instrument
 {
     public int ID;  // -- Using int for compatibility with CLS and various APIs. But should be non-negative.
-    public string CUSIP = "";  // -- Has to be of length 8
-    public string ISIN = "";  // -- Has to be of length 11
+    public string CUSIP = "";  // -- Has to be of length 9
+    public string ISIN = "";  // -- Has to be of length 12
     public string PARSEKEYABLE = "";  // -- Has to end in "\tCode"
 
     // -- Override ToString() method to print out a summary of the instrument.
@@ -73,9 +73,9 @@ class Product
         get => _CUSIP;
         set
         {
-            if (value.Length != 8)
+            if (value.Length != 9)
             {
-                throw new ArgumentException("CUSIP must be 8 characters long.");
+                throw new ArgumentException("CUSIP must be 9 characters long.");
             }
             _CUSIP = value;
         }
@@ -86,9 +86,9 @@ class Product
         get => _ISIN;
         set
         {
-            if (value.Length != 11)
+            if (value.Length != 12)
             {
-                throw new ArgumentException("ISIN must be 11 characters long.");
+                throw new ArgumentException("ISIN must be 12 characters long.");
             }
             _ISIN = value;
         }
@@ -144,7 +144,7 @@ class Program
         var loan = new Product(42, "XS123456", "XS123456789", "B12345\tCode", "Lorem ipsum");
         Console.WriteLine(loan.ToString());
         // -- The beauty of properties: concise method invocation, as if accessing a public attribute.
-        loan.CUSIP += "7";  // -- This will throw an exception because `CUSIP` has to be 8-characters long.
+        loan.CUSIP += "7";  // -- This will throw an exception because `CUSIP` has to be 9-characters long.
     }
     
 }
@@ -155,7 +155,7 @@ Output:
 ```
 Instrument(ID=-1, CUSIP=say, ISIN=what, PARSEKEYABLE=now?)
 Product(ID=42, CUSIP=XS123456, ISIN=XS123456789, PARSEKEYABLE=B12345    Code,  Blob=Lorem ipsum)
-Unhandled exception. System.ArgumentException: CUSIP must be 8 characters long.
+Unhandled exception. System.ArgumentException: CUSIP must be 9 characters long.
    at Properties.Program.Product.set_CUSIP(String value) in /Users/pdawg/Projects/CSharp/BabySteps/Properties/Program.cs:line 64
    at Properties.Program.Main(String[] args) in /Users/pdawg/Projects/CSharp/BabySteps/Properties/Program.cs:line 129
 ```
