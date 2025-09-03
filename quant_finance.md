@@ -56,7 +56,9 @@ Installing and using `QuantLib` on a mac is timeless entertainment. Although I'v
       
       As promised at the beginning, this is meant to be **fun**; therefore, compiling a hello-world program **of course** will not work yet. Attempting to compile a toy project leads to dozens of errors about members missing from the `std` namespace show up. Or, expressed in beatiful prose, something along the lines of
       
-      `/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__string/char_traits.h:286:17: No member named '__constexpr_wmemcmp' in namespace 'std'`
+      ```
+      /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__string/char_traits.h:286:17: No member named '__constexpr_wmemcmp' in namespace 'std'
+      ```
 
       It turns out that the errors can be addressed by updating the boost library. So this is not an issue with Xcode; rather, boost and QuantLib have to be "compatibly compiled" (can't use different C++ dialects, for example). In short,
 
