@@ -4,4 +4,10 @@ title: Machine Learning
 permalink: /machine_learning
 ---
 
-[ML & Numerics](/_posts/2025-09-06-ML-Numerics-01.md)
+# ToC
+- [The Sacred and the Profane](#the-sacred-and-the-profane)
+
+<hr>
+
+# The Sacred and the Profane
+Lorem ipsum
