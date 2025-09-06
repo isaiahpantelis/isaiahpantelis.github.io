@@ -20,7 +20,7 @@ Installing and using `QuantLib` on a mac is timeless entertainment. Although I'v
 
 - Follow the installation instructions: [Installation](https://www.quantlib.org/install/macosx.shtml)
 
-  - **Boost:** The first step in the installation guide pertains to the `boost` C++ library (libraries?) which is dependency of QuantLib's. Using `Homebrew` to install `boost` works perfectly fine (for my purposes, at least &mdash; I haven't had to look back).
+  - **Boost:** The first step in the installation guide pertains to the `boost` C++ library (libraries?) which is a dependency of QuantLib's. Using `Homebrew` to install `boost` works perfectly fine (for my purposes, at least &mdash; I haven't had to look back).
 
   - **Compile from source:** For QuantLib itself, however, I want the source code and the ability to modify it so I go directly to the `configure` step of the guide. Since I'm on `Ventura 13.6.9` (TMI, I know) the command
 
