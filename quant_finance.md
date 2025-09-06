@@ -54,7 +54,7 @@ Installing and using `QuantLib` on a mac is timeless entertainment. Although I'v
 
     - Error #1 &mdash; Incompatibility between `boost` and `QuantLib` or the dreaded `No member named 'X' in namespace 'std'`
       
-      As promised at the beginning, this is meant to be **fun**; therefore, compiling a hello-world program **of course** will not work off the bat. Attempting to compile a toy project leads to dozens of errors about members missing from the `std` namespace show up. Or, expressed in beatiful prose, something along the lines of
+      As promised at the beginning, this is meant to be **fun**; therefore, compiling a hello-world program **of course** will not work off the bat. Attempting to compile a toy project leads to dozens of errors about members missing from the `std` namespace. Or, expressed in beatiful prose, something along the lines of
       
       ```
       /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__string/char_traits.h:286:17: No member named '__constexpr_wmemcmp' in namespace 'std'
