@@ -4,7 +4,7 @@ title: Programming
 permalink: /programming
 ---
 
-# ToC
+#### CONTENTS
 - [C#](#c)
   - [Encapsulation](#encapsulation)
     - [Properties](#properties)

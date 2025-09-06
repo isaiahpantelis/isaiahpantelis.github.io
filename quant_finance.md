@@ -4,7 +4,7 @@ title: Quantitative Finance
 permalink: /quant_finance
 ---
 
-# ToC
+#### CONTENTS
 - [QuantLib on a Mac](#quantlib-on-a-mac)
 
 <hr>

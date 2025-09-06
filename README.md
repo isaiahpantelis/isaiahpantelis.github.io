@@ -1,1 +1,1 @@
-Lorem ipsum
+Contact: pantelis.isaiah@gmail.com
