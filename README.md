@@ -1,1 +1,1 @@
-Contact: pantelis.isaiah@gmail.com
+Contact: pantelis dot isaiah at gmail dot com
