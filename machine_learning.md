@@ -2,6 +2,7 @@
 layout: default
 title: Machine Learning
 permalink: /machine_learning
+markdown: kramdown
 ---
 
 <!-- *Under construction* -->
@@ -61,7 +62,7 @@ Suppose that
 $$x_k, \quad k=0,\ldots,n-1, \quad x_k\in[0,1]$$
 {% endraw %}
 
- are equidistant nodes and `y_k` are...
+are equidistant nodes and $$y_k\triangleq f(x_k)$$ are the corresponding values of the Runge function.
 
 ![Lagrange interpolating polynomial for the Runge function](/assets/snips/runges_phenomenon/lagrange_approx_runge.png)
 
