@@ -76,8 +76,17 @@ Because eyeballing pixels when it comes to approximation errors can be extremely
 
 That the graphs of the absolute and relative errors look identical is a coincidence due to the range of values of $$x$$ and $$y$$. No need to worry about that. There is no sleight of hand here; Chebyshev polynomials do work extremely well for certain tasks, and it's an entire rabbit hole to go down if one is willing to. An excellent book of applied mathematics that demonstrates some powerful techniques, especially for root finding, is [J. Boyd's book](https://www.google.ca/books/edition/Solving_Transcendental_Equations/29CgBAAAQBAJ?hl=en&gbpv=0). There is also the whole "chebfun" business that spun out of these ideas &mdash; google is your friend. The overarching idea is that "continuous mathematical objects" (whatever that means) can be replaced or proxied up to machine precision by their Chebyshev approximations. But there is more magic to it, actually: from the proxy one can compute roots, derivatives, and integrals. The major limitation of this paradigm is the inability to handle high-dimensional problems, but 'nuff said for now (and, no, "tensor products" have not fully addressed the limitation).
 
+## A different problem
 
+At this point we know that:
 
-## Another classical solution to the problem
+1. Exact interpolation at equidistant points *can* be a terrible idea.
+2. Exact interpolation at cleverly sampled points *can* be a fantastic idea.
 
-## Another problem
+It all depends on the task at hand. But one can ask other interesting questions. For example, 
+
+*To be continued*
+
+<!-- ## Another classical solution to the original problem
+
+## Another problem -->
