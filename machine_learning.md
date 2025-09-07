@@ -56,7 +56,9 @@ Since we're playing around with interpolation, it makes sense to have the option
 
 If you're all wide-eyed when it comes to approximation theory, the following may seem counter-intuitive.
 
-Suppose that $$x_k, \quad k=0,\ldots,n-1, \quad x_k\in[0,1]$$
+Suppose that 
+
+$$x_k, \quad k=0,\ldots,n-1, \quad x_k\in[0,1]$$
 
 are equidistant nodes in $$[0,1]$$ and $$y_k\triangleq f(x_k)$$ are the corresponding values of the Runge function. Then, the unique polynomial $$p_{n-1}^L$$ of degree $$n-1$$ that passes through the points $$(x_k,y_k)$$ becomes a terrible approximation (this is a technical term) of the function $$f$$ as $$n$$ increases.
 
