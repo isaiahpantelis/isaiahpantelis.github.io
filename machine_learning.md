@@ -64,6 +64,8 @@ are equidistant nodes in $$[0,1]$$ and $$y_k\triangleq f(x_k)$$ are the correspo
 
 ![Lagrange interpolating polynomial for the Runge function](/assets/snips/runges_phenomenon/lagrange_approx_runge.png)
 
+There is a classical well-known remedy to this problem: choose your nodes wisely. Specifically, since all truths in the real line pass through the complex plane (according to Hadamard), choose the nodes to be projections of equidistant points (the distance being measured by arc length) on the unit circle. In other words, a better choice is the *Chebyshev points of the 1st kind*. 
+
 ## Classical solutions to the problem
 
 ## Another problem
