@@ -55,6 +55,16 @@ Since we're playing around with interpolation, it makes sense to have the option
 
 If you're all wide-eyed when it comes to approximation theory, the following may seem counter-intuitive.
 
-Suppose that $x_k$, $k=0,\ldots,n-1$, are equidistant nodes in $[0,1]$, and $y_k$ are...
+Suppose that
+
+{% raw %}
+ $$x_k, k=0,\ldots,n-1$$,
+ {% endraw %}
+
+ are equidistant nodes in $[0,1]$, and $y_k$ are...
 
 ![Lagrange interpolating polynomial for the Runge function](/assets/snips/runges_phenomenon/lagrange_approx_runge.png)
+
+## Classical solutions to the problem
+
+## Another problem
