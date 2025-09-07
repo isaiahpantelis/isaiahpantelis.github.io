@@ -23,7 +23,7 @@ Loosely translated:
 Because there are many moving pieces in what follows, it is useful to have from the beginning a *conceptual* summary of what Runge's phenomenon is about: it simply says that the *obvious* choice of interpolating polynomials can be a terrible idea. It's not a hard problem, let alone an unsolved one. Learning a bit about it, however, can be informative.
 
 ## Runge's function
-First, let's define Runge's function which is the function he used as an example in his [paper](https://archive.org/details/zeitschriftfrma12runggoog/page/224/mode/2up?view=theater) on interpolation at equidistant points:
+First, let's define Runge's function, which is the function he used as an example in his [paper](https://archive.org/details/zeitschriftfrma12runggoog/page/224/mode/2up?view=theater) on interpolation at equidistant points. But, to make things a bit more dramatic, let's add a coefficient of `10` in the denominator:
 
 ![Runge's example function](/assets/snips/runges_phenomenon/runges_function_original.png)
 
@@ -42,7 +42,7 @@ def ground_truth(x, noise=False, seed=None):
         pd
         .DataFrame({
             'x': x,
-            'y': np.vectorize(lambda t: 1 / (1 + t ** 2))(x) + noise_vector
+            'y': np.vectorize(lambda t: 1 / (1 + 10 * t ** 2))(x) + noise_vector
         })
         .sort_values(by=['x'])
         .reset_index(drop=True)
