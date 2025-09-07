@@ -83,9 +83,7 @@ At this point we know that:
 1. Exact interpolation at equidistant points *can* be a terrible idea.
 2. Exact interpolation at cleverly sampled points *can* be a fantastic idea.
 
-It all depends on the task at hand. But one can ask other interesting questions. 
-
-<!-- For example,  -->
+It all depends on the task at hand. But one can ask **other** interesting questions. For example, is a good interpolant, such as the one provided by the Chebyshev interpolation, somehow inherently tied to the function that generated the interpolated values? Or, put differently, is a good interpolant "learning" the data generation mechanism? Now, a mathematically literate person (say, someone who has been exposed to post 18-th century mathematics) should immediately offer an emphatic "no" or an emphatic "no, unless you prove otherwise". Two functions can agree on an **interval** in the real line and still be completely different functions. Why, then, agreement on finitely many values (that can be represented in floating-point arithmetic) would imply some deeper structural link between the function and the interpolant. Although the new question about learning the data generation mechanism has not been precisely defined, it is in a sense falsifiable and, therefore, worth considering further. 
 
 *To be continued*
 
