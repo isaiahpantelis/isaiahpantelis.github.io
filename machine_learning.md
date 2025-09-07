@@ -58,10 +58,10 @@ If you're all wide-eyed when it comes to approximation theory, the following may
 Suppose that
 
 {% raw %}
- $$x_k, k=0,\ldots,n-1$$,
- {% endraw %}
+$$x_k, \quad k=0,\ldots,n-1, \quad x_k\in[0,1]$$
+{% endraw %}
 
- are equidistant nodes in $[0,1]$, and $y_k$ are...
+ are equidistant nodes and `y_k` are...
 
 ![Lagrange interpolating polynomial for the Runge function](/assets/snips/runges_phenomenon/lagrange_approx_runge.png)
 
