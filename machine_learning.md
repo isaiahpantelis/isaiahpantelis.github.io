@@ -28,7 +28,7 @@ First, let's define Runge's function, which is the function he used as an exampl
 ![Runge's example function](/assets/snips/runges_phenomenon/runges_function_original.png)
 
 ```python
-def ground_truth(x: np.array, noise: bool = False, seed: bool = None) -> pd.DataFrame:
+def ground_truth(x: np.array, noise: bool = False, seed: int = None) -> pd.DataFrame:
 
     if noise:
         if seed is None:
@@ -54,3 +54,92 @@ Since we're playing around with interpolation, it makes sense to have the option
 ## The problem
 
 If you're all wide-eyed when it comes to approximation theory, the following may seem counter-intuitive.
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+from scipy.interpolate import lagrange
+
+
+# ==================================================================================================================== #
+
+
+def ground_truth(x: np.array, noise: bool = False, seed: int = None) -> pd.DataFrame:
+
+    if noise:
+        if seed is None:
+            raise ValueError('If `noise is True` then `seed` cannot be `None`.')
+        rng = np.random.default_rng(seed=seed)
+        noise_vector = rng.normal(loc=0.0, scale=0.01, size=x.shape)
+    else:
+        noise_vector = np.zeros(shape=x.shape)
+
+    return (
+        pd
+        .DataFrame({
+            'x': x,
+            'y': np.vectorize(lambda t: 1 / (1 + 100 * t ** 2))(x) + noise_vector
+        })
+        .sort_values(by=['x'])
+        .reset_index(drop=True)
+    )
+
+
+def uniform_nodes(n, start=-1.0, stop=1.0):
+    return np.linspace(start=start, stop=stop, num=n)
+
+
+# ==================================================================================================================== #
+
+
+def run() -> None:
+
+    # ---------------------------------------------------------------------------------------------------------------- #
+    # -- SETTINGS -- #
+    # ---------------------------------------------------------------------------------------------------------------- #
+    seed = 42
+    NOISE = False
+
+    # ---------------------------------------------------------------------------------------------------------------- #
+    # -- DATA GENERATION -- #
+    # ---------------------------------------------------------------------------------------------------------------- #
+    # -- Ground truth at uniform nodes -- #
+    df_fine = ground_truth(x=uniform_nodes(n=1000), noise=NOISE, seed=seed)
+
+    plt.figure()
+
+    for k, n in enumerate(map(lambda x: 2 ** x, range(1, 6)), 1):
+
+        # -- Interpolation nodes -- #
+        df_nodes = ground_truth(x=uniform_nodes(n=n), noise=NOISE, seed=seed)
+
+        # ------------------------------------------------------------------------------------------------------------ #
+        # -- LAGRANGE APPROXIMATION -- #
+        # ------------------------------------------------------------------------------------------------------------ #
+        # -- Lagrange polynomial -- #
+        lp = lagrange(df_nodes.x.values, df_nodes.y.values)
+        y_lp = lp(df_fine.x.values)
+
+        # ------------------------------------------------------------------------------------------------------------ #
+        # -- PLOTTING -- #
+        # ------------------------------------------------------------------------------------------------------------ #
+        plt.subplot(1, 5, k)
+        plt.plot(df_fine.x.values, df_fine.y.values, 'b-', label='Runge function')
+        plt.plot(df_nodes.x.values, df_nodes.y.values, 'k.', markersize=12, label='Interpolation nodes')
+        plt.plot(df_fine.x.values, y_lp, 'r-', label=f'{n} nodes')
+        plt.legend(loc='upper left')
+        plt.grid()
+
+    plt.show()
+
+
+# ==================================================================================================================== #
+
+
+if __name__ == '__main__':
+    run()
+
+```
+
+![Lagrange interpolating polynomial for the Runge function](/assets/snips/runges_phenomenon/lagrange_approx_runge.png)
