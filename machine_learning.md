@@ -89,6 +89,8 @@ It all depends on the task at hand. But one can ask **other** interesting questi
 
 Nothing to see here, really. We fed the Chebyshev machinery a function $$f:I\mapsto\mathbb{R}$$ and the machinery did an excellent job at approximating it, and now we are checking the output on a **different** function $$\tilde{f}:J\mapsto\mathbb{R}$$.
 
+But communicating intent clearly is important in most walks of life (probably not in politics or in environments dominated by politics). Then, let's reframe everything: we agree now that we want some kind of approximation that, well, approximates adequately the points we use to build the approximation, but, also, we want the approximating object to do a decent job when presented with new data not included in the construction of the approximation. This approach will offer a satisfactory illusion of "learning". The way to assess performance on this new task is called "cross-validation".
+
 *To be continued*
 
 <!-- ## Another classical solution to the original problem
