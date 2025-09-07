@@ -64,6 +64,8 @@ are equidistant nodes in $$[0,1]$$ and $$y_k\triangleq f(x_k)$$ are the correspo
 
 ![Lagrange interpolating polynomial for the Runge function](/assets/snips/runges_phenomenon/lagrange_approx_runge.png)
 
+## A classical solution to the problem
+
 There is a classical well-known remedy to this problem: choose your nodes wisely. Specifically, since all truths in the real line pass through the complex plane (according to Hadamard), choose the nodes to be projections of equidistant points (the distance being measured by arc length) on the unit circle. In other words, a better choice is the *Chebyshev points of the 1st kind*. 
 
 ![Chebyshev interpolating polynomial for the Runge function](/assets/snips/runges_phenomenon/chebyshev_approx_runge.png)
@@ -74,6 +76,6 @@ Because eyeballing pixels when it comes to approximation errors can be extremely
 
 That the graphs of the absolute and relative errors look identical is a coincidence due to the range of values of $$x$$ and $$y$$. No need to worry about that. There is no sleight of hand here; Chebyshev polynomials do work extremely well for certain tasks, and it's an entire rabbit hole to go down if one is willing to. An excellent book of applied mathematics that demonstrates some powerful techniques, especially for root finding, is [J. Boyd's book](https://www.google.ca/books/edition/Solving_Transcendental_Equations/29CgBAAAQBAJ?hl=en&gbpv=0). There is also the whole "chebfun" business that spun out of these ideas &mdash; google is your friend.
 
-## Classical solutions to the problem
+## Another classical solution to the problem
 
 ## Another problem
