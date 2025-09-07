@@ -28,7 +28,7 @@ First, let's define Runge's function, which is the function he used as an exampl
 ![Runge's example function](/assets/snips/runges_phenomenon/runges_function_original.png)
 
 ```python
-def ground_truth(x, noise=False, seed=None):
+def ground_truth(x: np.array, noise: bool = False, seed: bool = None) -> pd.DataFrame:
 
     if noise:
         if seed is None:
