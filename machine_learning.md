@@ -56,13 +56,9 @@ Since we're playing around with interpolation, it makes sense to have the option
 
 If you're all wide-eyed when it comes to approximation theory, the following may seem counter-intuitive.
 
-Suppose that
+Suppose that $$x_k, \quad k=0,\ldots,n-1, \quad x_k\in[0,1]$$
 
-{% raw %}
-$$x_k, \quad k=0,\ldots,n-1, \quad x_k\in[0,1]$$
-{% endraw %}
-
-are equidistant nodes and $$y_k\triangleq f(x_k)$$ are the corresponding values of the Runge function.
+are equidistant nodes in $$[0,1]$$ and $$y_k\triangleq f(x_k)$$ are the corresponding values of the Runge function.
 
 ![Lagrange interpolating polynomial for the Runge function](/assets/snips/runges_phenomenon/lagrange_approx_runge.png)
 
