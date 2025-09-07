@@ -19,12 +19,12 @@ markdown: kramdown
 
 Loosely translated:
 
-> But where physicists venture into dangerous territory is when they tend to accept as "obvious" what is no longer so at all, and forget that our "intuition" is a rather rudimentary tool that grossly deceives us on occasion. Contrary to what many of them believe, it is not necessary, to challenge results they accept without discussion, to seek out functions as "monstrous" as functions without derivatives; the "phenomenon of Runge" (chap. IX, Appendix) shows that the classical polynomial interpolation procedure can very well diverge for analytic functions as "excellent" as one could desire; and there are analytic functions for `|z| < 1`, continuous throughout the disk `|z| ≤ 1`, and yet which transform the circle `|z| = 1` into a Peano curve filling a square.
+> But where physicists venture into dangerous territory is when they tend to accept as "obvious" what is no longer so at all, and forget that our "intuition" is a rather rudimentary tool that grossly deceives us on occasion. Contrary to what many of them believe, it is not necessary, to challenge results they accept without discussion, to seek out functions as "monstrous" as functions without derivatives; the "phenomenon of Runge" (chap. IX, Appendix) shows that the classical polynomial interpolation procedure can very well diverge for analytic functions as "excellent" as one could desire; and there are analytic functions for $$|z| < 1$$, continuous throughout the disk $$|z| ≤ 1$$, and yet which transform the circle $$|z| = 1$$ into a Peano curve filling a square.
 
 Because there are many moving pieces in what follows, it is useful to have from the beginning a *conceptual* summary of what Runge's phenomenon is about: it simply says that the *obvious* choice of interpolating polynomials can be a terrible idea. It's not a hard problem, let alone an unsolved one. Learning a bit about it, however, can be informative.
 
 ## Runge's function
-First, let's define Runge's function, which is the function he used as an example in his [paper](https://archive.org/details/zeitschriftfrma12runggoog/page/224/mode/2up?view=theater) on interpolation at equidistant points. But, to make things a bit more dramatic, let's add a coefficient of `10` in the denominator:
+First, let's define Runge's function, which is the function he used as an example in his [paper](https://archive.org/details/zeitschriftfrma12runggoog/page/224/mode/2up?view=theater) on interpolation at equidistant points. But, to make things a bit more dramatic, let's add a coefficient of $$10$$ in the denominator:
 
 ![Runge's example function](/assets/snips/runges_phenomenon/runges_function_original.png)
 
