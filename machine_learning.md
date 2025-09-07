@@ -83,7 +83,9 @@ At this point we know that:
 1. Exact interpolation at equidistant points *can* be a terrible idea.
 2. Exact interpolation at cleverly sampled points *can* be a fantastic idea.
 
-It all depends on the task at hand. But one can ask other interesting questions. For example, 
+It all depends on the task at hand. But one can ask other interesting questions. 
+
+<!-- For example,  -->
 
 *To be continued*
 
