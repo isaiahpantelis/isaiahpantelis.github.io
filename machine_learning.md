@@ -50,3 +50,7 @@ def ground_truth(x: np.array, noise: bool = False, seed: bool = None) -> pd.Data
 ```
 
 Since we're playing around with interpolation, it makes sense to have the option to add noise on a whim. Hence the extra lines of code.
+
+## The problem
+
+If you're all wide-eyed when it comes to approximation theory, the following may seem counter-intuitive.
