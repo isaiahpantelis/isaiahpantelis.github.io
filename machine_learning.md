@@ -7,7 +7,7 @@ permalink: /machine_learning
 <!-- *Under construction* -->
 
 #### CONTENTS
-- [The Sacred and the Profane](#the-sacred-and-the-profane)
+- [An old problem with an old solution](#an-old-problem-with-an-old-solution)
 
 <hr>
 
