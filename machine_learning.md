@@ -54,14 +54,13 @@ def ground_truth(x: np.array, noise: bool = False, seed: int = None) -> pd.DataF
 Since we're playing around with interpolation, it makes sense to have the option to add noise on a whim. Hence the extra lines of code.
 
 ## The problem
-
 If you're all wide-eyed when it comes to approximation theory, the following may seem counter-intuitive.
 
 Suppose that 
 
 $$x_k, \quad k=0,\ldots,n-1, \quad x_k\in[0,1]$$
 
-are equidistant nodes in $$[0,1]$$ and $$y_k\triangleq f(x_k)$$ are the corresponding values of the Runge function. Then, the unique polynomial $$p_{n-1}^L$$ of degree $$n-1$$ that passes through the points $$(x_k,y_k)$$ becomes a terrible approximation (this is a technical term) of the function $$f$$ as $$n$$ increases.
+are equidistant points in $$[0,1]$$ (aka nodes) and $$y_k\triangleq f(x_k)$$ are the corresponding values of the Runge function. Then, the unique polynomial $$p_{n-1}^L$$ of degree $$n-1$$ that passes through the points $$(x_k,y_k)$$ becomes a terrible approximation (this is a technical term) of the function $$f$$ as $$n$$ increases.
 
 ![Lagrange interpolating polynomial for the Runge function](/assets/snips/runges_phenomenon/lagrange_approx_runge.png)
 
