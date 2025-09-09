@@ -78,7 +78,6 @@ That the graphs of the absolute and relative errors look identical is a coincide
 There is no sleight of hand &mdash; Chebyshev polynomials **do** work extremely well for certain tasks; and it's an entire rabbit hole to go down if one is willing to. An excellent book of applied mathematics that demonstrates some powerful techniques, especially for root finding, is [J. Boyd's book](https://www.google.ca/books/edition/Solving_Transcendental_Equations/29CgBAAAQBAJ?hl=en&gbpv=0). There is also the whole "chebfun" business that spun out of these ideas (google is your friend). The overarching principle is that "continuous mathematical objects" (whatever that means) can be replaced or proxied up to machine precision by their Chebyshev approximations. But there is more magic to it, actually: from the proxy one can compute roots, derivatives, and integrals. The major limitation of this paradigm is the inability to handle high-dimensional problems, but enough said for now (and, no, "tensor products" have not fully addressed the limitation).
 
 ## A different problem
-
 At this point we know that:
 
 1. Exact interpolation at equidistant points *can* be a terrible idea.
@@ -88,13 +87,13 @@ It all depends on the task at hand. But one can ask **other** interesting questi
 
 Although the newly formulated question about *learning* the data generation mechanism (as oppposed to finding a polynomial that passes through some points) has not been precisely defined, it is in a sense falsifiable and, therefore, worth considering further. So let's pretend we're in a toxic relationship with the Chebyshec polynomials: we tell them one thing but we mean another. Initially, we had asked of them to approximate the function $$f$$ on the interval $$I=[-1,1]$$, but now we expect them to behave like the function $$f$$ also **outside** the interval $$I$$. This is an instance of "extrapolation" and may seem like an intuitively appealing concept of "learning". After all, if you are actually learning the **function**, then you'd behave like the function no matter what, no?. But intuitive appeal or not, "the first principle is that you must not fool yourself"[^5]. The domain of a function is part of the function's definition&mdash;there are no two ways about it&mdash;and we had asked for an approximation on $$[-1,1]$$ specifically. A different domain means a different function.[^6]
 
-This is how the Chebyshev interpolant, built out of $$24$$ nodes, behaves on $$J\triangleq[-1.1,1.1]$$:
+This is how the Chebyshev interpolant, built out of $$24$$ nodes, behaves on $$J\triangleq[-1.1,1.1]$$:[^7]
 
 ![Chebyshev extrapolation](/assets/snips/runges_phenomenon/cheb_extrapolation.png)
 
 Nothing to see here, really. Again, We fed the Chebyshev machinery a function $$f:I\mapsto\mathbb{R}$$ and the machinery did an excellent job at approximating it. But now we are checking the constructed approximation against a different function $$\tilde{f}:J\mapsto\mathbb{R}$$.
 
-But communicating intent clearly is important in most walks of life.[^7] So, then, let's reframe everything: let's agree now that we want some kind of approximation that, well, approximates adequately the points we use to build the approximation itself, but, also, we want the approximating object to do a decent job when presented with new data never seen before. This approach will offer a satisfactory illusion of "learning". The way to assess performance on this new task is called "cross-validation".
+But communicating intent clearly is important in most walks of life.[^8] So, then, let's reframe everything: let's agree now that what we really want is *some* kind of approximation that, well, approximates adequately the points we use to build the approximation itself, but, also, we want the approximating object, in this case the interpolant, to do a decent job when presented with **new data never seen before**. This approach may offer a satisfactory illusion of "learning the data generation mechanism". The way to assess performance on this new task is usually called "cross-validation".
 
 ## Polynomial regression with cross-validation
 
@@ -112,4 +111,5 @@ Now we'll revert back to the standard basis $$1, X, X^2, \dots$$ of $$R[X]$$. Al
 [^4]: In fact, only values that can be represented in floating-point arithmetic.
 [^5]: [Cargo cult science](https://people.cs.uchicago.edu/~ravenben/cargocult.html)
 [^6]: The fact that obvious relations can be defined between functions, such as a function $f$ being the **restriction** or the **continuation** of another fucntion $g$ is a different story. One has to maintain clarity of thought.
-[^7]: Probably not in politics or trading.
+[^7]: I won't even bother showing the extrapolation using the Lagrange polynomial. As you can guess, it's abysmal.
+[^8]: Probably not in politics or trading.
