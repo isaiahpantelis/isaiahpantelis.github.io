@@ -13,13 +13,13 @@ markdown: kramdown
 <hr>
 
 # An old problem with an old solution
-["Runge's phenomenon"](https://en.wikipedia.org/wiki/Runge's_phenomenon) is an observation, published by Carl Runge in 1901, related to the interpolation of a function by polynomials using equidistant nodes.[^1] Today, the observation is somewhat trivial or, at least, mainstream; however, it drew attention when it was first made because the standards or rigour among physicists were quite lax back then. Even mathematics had only recently started getting serious with the help of Cauchy and Weierstrass. But, if Dieudonné has written about a topic, there is no point in trying to do better. And he *has* made a remark about Runge's phenomenon (Calcul Infinitésimal, p. 16):
+["Runge's phenomenon"](https://en.wikipedia.org/wiki/Runge's_phenomenon) is an observation, published by Carl Runge in 1901, related to the interpolation of a function by polynomials using equidistant nodes.[^1] Today, the observation is somewhat trivial or, at least, mainstream; however, it drew attention when it was first made because the standards or rigour among physicists were quite lax back then. Even mathematics had only recently started adopting a grown up attitude towards rigour with the help of Cauchy and Weierstrass. But, if Dieudonné has written about a topic, there is no point in trying to do better. And he *has* made a remark about Runge's phenomenon (Calcul Infinitésimal, p. 16):
 
 ![Dieudonné, Calcul Infinitésimal](/assets/snips/runges_phenomenon/dieudonne_runge_phenomenon.png)
 
 Loosely translated:
 
-But where physicists venture into dangerous territory is when they tend to accept as "obvious" what is no longer so at all, and forget that our "intuition" is a rather rudimentary tool that grossly deceives us on occasion. Contrary to what many of them believe, it is not necessary, to challenge results they accept without discussion, to seek out functions as "monstrous" as functions without derivatives; the "phenomenon of Runge" (chap. IX, Appendix) shows that the classical polynomial interpolation procedure can very well diverge for analytic functions as "excellent" as one could desire; and there are analytic functions for $${\\|}z{\\|}\lt 1$$, continuous throughout the disk $${\\|}z{\\|}\leq 1$$, and yet which transform the circle $${\\|}z{\\|} = 1$$ into a Peano curve filling a square.
+But where physicists venture into dangerous territory is when they tend to accept as "obvious" what is no longer so at all, and forget that **our "intuition" is a rather rudimentary tool that grossly deceives us on occasion**.[^1] Contrary to what many of them believe, it is not necessary, to challenge results they accept without discussion, to seek out functions as "monstrous" as functions without derivatives; the "phenomenon of Runge" (chap. IX, Appendix) shows that the classical polynomial interpolation procedure can very well diverge for analytic functions as "excellent" as one could desire; and there are analytic functions for $${\\|}z{\\|}\lt 1$$, continuous throughout the disk $${\\|}z{\\|}\leq 1$$, and yet which transform the circle $${\\|}z{\\|} = 1$$ into a Peano curve filling a square.
 
 Because there are many moving pieces in what follows, it is useful to have from the beginning a *conceptual* summary of what Runge's phenomenon is about: it simply says that the **obvious** choice of interpolating polynomials can be a terrible idea. It does **not** say that polynomials are useless. It's not a hard problem, let alone an unsolved one. Learning about it, however, can be informative.
 
@@ -100,4 +100,7 @@ Now we'll revert back to the standard basis $$1, X, X^2, \dots$$ of $$R[X]$$. Al
 
 *To be continued*
 
+<hr>
+
 [^1]: In this note, the focus is on real-valued functions of a single real variable.
+[^1]: The emphasis is mine.
