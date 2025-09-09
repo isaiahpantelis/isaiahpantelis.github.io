@@ -13,7 +13,7 @@ markdown: kramdown
 <hr>
 
 # An old problem with an old solution
-["Runge's phenomenon"](https://en.wikipedia.org/wiki/Runge's_phenomenon) is an observation, published by Carl Runge in 1901, related to the interpolation of a function by polynomials using equidistant nodes. Today, the observation is somewhat trivial or, at least, mainstream; however, it drew attention when it was first made because the standards or rigour among physicists were quite lax back then. Even mathematics had only recently started getting serious with the help of Cauchy and Weierstrass. But, if Dieudonné has written about a topic, there is no point in trying to do better. And he *has* made a remark about Runge's phenomenon (Calcul Infinitésimal, p. 16):
+["Runge's phenomenon"](https://en.wikipedia.org/wiki/Runge's_phenomenon) is an observation, published by Carl Runge in 1901, related to the interpolation of a function by polynomials using equidistant nodes.[^1] Today, the observation is somewhat trivial or, at least, mainstream; however, it drew attention when it was first made because the standards or rigour among physicists were quite lax back then. Even mathematics had only recently started getting serious with the help of Cauchy and Weierstrass. But, if Dieudonné has written about a topic, there is no point in trying to do better. And he *has* made a remark about Runge's phenomenon (Calcul Infinitésimal, p. 16):
 
 ![Dieudonné, Calcul Infinitésimal](/assets/snips/runges_phenomenon/dieudonne_runge_phenomenon.png)
 
@@ -94,10 +94,10 @@ But communicating intent clearly is important in most walks of life (probably no
 
 ## Polynomial regression with cross-validation
 
-Now we'll revert back to the standard basis $$1, X, X^2, \dots$$ of $$R[X]$$, although it's not the best basis for every task. Familiarity wins.
+Now we'll revert back to the standard basis $$1, X, X^2, \dots$$ of $$R[X]$$. Although it's not the best basis for every task, familiarity wins.
+
+
 
 *To be continued*
 
-<!-- ## Another classical solution to the original problem
-
-## Another problem -->
+[^1]: In this note, the focus is on real-valued functions of a single real variable.
