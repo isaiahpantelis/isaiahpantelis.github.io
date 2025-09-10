@@ -112,6 +112,8 @@ Out of curiosity, we can repeat this last experiment using the same Chebyshev no
 
 This is an intuitive outcome: with $$1,000$$ Chebyshev nodes in $I$ and with the characteristic property that Chebyshev nodes have of clustering towards the endpoints of the interval, there isn't enough room for the approximating polynomial to start wiggling. At the same time, performance on the test set (i.e., extrapolation) is even worse than before.
 
+## To shuffle or not to shuffle
+
 But there is something else slightly subtle going on here as well that can be easy to miss without some prior familiarity with both the theory and implementation of ML algos. The constructor `KFold` has `False` as the default value for the argument `shuffle`; therefore, calling the constructor like this
 
 ```python
