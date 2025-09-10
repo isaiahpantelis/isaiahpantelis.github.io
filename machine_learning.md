@@ -129,7 +129,7 @@ will not permute the rows of the data frame that contains the training data. Thi
 [^3]: Among other things, 18th century mathematicians believed that all functions are real analytic. And they would fight you for it.
 [^4]: In fact, only values that can be represented in floating-point arithmetic.
 [^5]: [Cargo cult science](https://people.cs.uchicago.edu/~ravenben/cargocult.html)
-[^6]: The fact that obvious relations can be defined between functions, such as a function $f$ being the **restriction** or the **continuation** of another fucntion $g$ is a different story. One has to maintain clarity of thought.
+[^6]: The fact that obvious relations can be defined between functions, such as a function $$f$$ being the **restriction** or the **continuation** of another function $$g$$ is a different story. One has to maintain clarity of thought.
 [^7]: I won't even bother showing the extrapolation using the Lagrange polynomial. As you can guess, it's abysmal.
 [^8]: Probably not in politics or trading.
 [^9]: Although it's not the best basis for every task, familiarity wins.
