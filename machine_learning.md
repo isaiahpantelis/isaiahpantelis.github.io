@@ -126,6 +126,10 @@ Quick sanity check: $$1,000$$ training data points with $$10$$ folds results in 
 
 Often this is not the desired behaviour, especially if one is using an ML method that assumes i.i.d. samples. Here, however, there is no statistical inference&mdash;we're simply solving a least squares problem.[^11]
 
+<hr>
+**Exercise:** Try $$2_000$$ Chebyshev nodes, add some noise, and using shuffling in the cross validation.
+<hr>
+
 #### FOOTNOTES
 
 [^1]: In this note, the focus is on real-valued functions of a single real variable.
