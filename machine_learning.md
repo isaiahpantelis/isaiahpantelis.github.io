@@ -63,7 +63,7 @@ are equidistant points in $$[0,1]$$ (aka nodes) and $$y_k\triangleq f(x_k)$$ are
 
 ![Lagrange interpolating polynomial for the Runge function](/assets/snips/runges_phenomenon/lagrange_approx_runge.png)
 
-One thing to keep in mind regarding the previous plots is that blue line is an ethereal object. A projection to reality of an abstract mathematical entity. All the interpolation process knows is the points in black. Our brain is too good at picking patterns, even ones that don't exist. We cannot blame the red line for wiggling between the nodes near the endpoints of the interval and, therefore, wildly diverging from the blue line. The interpolation process is completely unaware of the blue line. 
+One thing to keep in mind regarding the previous plots is that blue line is an ethereal object. A projection to reality of an abstract mathematical entity. All the interpolation process knows is the points in black. Our brain is too good at picking patterns, even ones that don't exist. We cannot blame the red line for wiggling between the nodes near the endpoints of the interval and, therefore, wildly diverging from the blue line. The interpolation process is completely unaware of the blue line as a globally defined object. 
 
 ## A classical solution to the problem
 
@@ -137,6 +137,10 @@ The natural next thing to try is equidistant nodes + shuffling:
 The result, in this case, is an interpolating polynomial of much higher degree $$(71)$$ that overfits. The conclusion is **definitely not** a *general* rule of the kind "shuffling leads to overfitting". The whole point of this exercise is simply to carefully consider various aspects of applying different techniques to the same problem. With that in mind, what we've learnt here is to pay attention to whether the training samples have been shuffled or not because it matters.
 
 ## Yet another classical solution to the interpolation problem
+
+There are dozens of interpolation techniques and the Lagrange and Chebyshev interpolations don't begin to exhaust the available methods. A famous and practical method that works well in practice is to use Bernstein polynomials. Let's test them against the Runge function.
+
+![Approximation of the Runge function using Bernstein polynomials](/assets/snips/runges_phenomenon/bernstein_approx_runge.png)
 
 <hr>
 **Exercise:** Try $$2,000$$ Chebyshev nodes, add some noise, and use shuffling in the cross validation.
