@@ -124,6 +124,8 @@ will not permute the rows of the data frame that contains the training data. Thi
 
 Quick sanity check: $$1,000$$ training data points with $$10$$ folds results in test sets of $$100$$ points to be used in the grid search. More importantly, the test sets are obtained by sliding a window from left to right[^10] inside $$[-1,1]$$.
 
+Often this is not the desired behaviour, especially if one is using an ML method that assumes i.i.d. samples. Here, however, there is no statistical inference&mdash;we're simply solving a least squares problem.[^11]
+
 <hr>
 
 [^1]: In this note, the focus is on real-valued functions of a single real variable.
@@ -136,3 +138,4 @@ Quick sanity check: $$1,000$$ training data points with $$10$$ folds results in 
 [^8]: Probably not in politics or trading.
 [^9]: Although it's not the best basis for every task, familiarity wins.
 [^10]: The training data are sorted when they are generated.
+[^11]: That of polynomial regression.
