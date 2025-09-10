@@ -99,12 +99,16 @@ But communicating intent clearly is important in most walks of life.[^8] So, the
 
 To tackle the new task, we shift mindset and methodology. The tools in the previous sections were from classical approximation theory. The tools in this section have a throw-the-kitchen-sink-at-the-problem flavour. That is, we'll use some **rudimentary machine learning**. First, we'll revert to the standard basis[^9] $$1, X, X^2, \dots$$ of $$R[X]$$ and use an `sklearn` preprocessor to create polynomial features. Then, we'll generate a ton of data, instead of a handfull of nodes, and use cross-validation to find the best approximating polynomial by doing a grid search over the polynomial's degree. Specifically, let's use $$1,000$$ points $$(x_k,f(x_k))$$, where the $$x_k$$ are equidistant in $$I=[-1,1]$$ and $$f:I\mapsto\mathbb{R}$$ is the Runge function, and 10-fold cross-validation. Also, we will search over degrees ranging from $$1$$ to $$100$$.
 
-![Polynomial regression using 10-fold CV, 1,000 data points, and a grid search over degrees from 1 to 100](/assets/snips/runges_phenomenon/poly_regr_wo_shuffling.png)
+![Polynomial regression using 10-fold CV, 1,000 equidistant data points, and a grid search over degrees from 1 to 100](/assets/snips/runges_phenomenon/poly_regr_wo_shuffling.png)
 
 The result is kind of interesting. Some observations:
 
 1. Extrapolation to $$[-1.1, 1.1]$$ is still atrocious. Put differently, despite the use of 10-fold CV on the training set $$[-1,1]$$, performance on the test sets $$[-1.1,-1]$$ and $$[1,1.1]$$ is underwhelming at best. 
 1. The best degree singled out by 10-fold CV, with the given choice of hyperparameters, number of data points, etc, is a lowly $$8$$.
+
+Out of curiosity, we can repeat this last experiment using the same Chebushev nodes as before:
+
+![Polynomial regression using 10-fold CV, 1,000 Chebyshev nodes, and a grid search over degrees from 1 to 100](/assets/snips/runges_phenomenon/poly_regr_wo_shuffling_cheb_nodes.png)
 
 But there is something slightly subtle going on here that can be easy to miss without some prior experience with both the theory and implementation of ML algos.
 
