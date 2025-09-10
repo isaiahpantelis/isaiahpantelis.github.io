@@ -93,15 +93,20 @@ This is how the Chebyshev interpolant, built out of $$24$$ nodes, behaves on $$J
 
 Nothing to see here, really. Again, We fed the Chebyshev machinery a function $$f:I\mapsto\mathbb{R}$$ and the machinery did an excellent job at approximating it. But now we are checking the constructed approximation against a different function $$\tilde{f}:J\mapsto\mathbb{R}$$.
 
-But communicating intent clearly is important in most walks of life.[^8] So, then, let's reframe everything: let's agree now that what we really want is *some* kind of approximation that, well, approximates adequately the points we use to build the approximation itself, but, also, we want the approximating object, in this case the interpolant, to do a decent job when presented with **new data never seen before**. This approach may offer a satisfactory illusion of "learning the data generation mechanism". The way to assess performance on this new task is usually called "cross-validation".
+But communicating intent clearly is important in most walks of life.[^8] So, then, let's reframe everything: let's agree now that what we *really* want is *some* kind of approximation that, well, approximates adequately the points used to build the approximation itself, but, also, we want the approximating object, in this case the interpolant, to do a decent job when presented with **new data never seen before**. This approach may offer a satisfactory illusion of "learning the data generation mechanism". The way to assess performance on this new task is usually called "cross-validation" (CV).
 
 ## Polynomial regression with cross-validation
 
-Now we'll revert back to the standard basis $$1, X, X^2, \dots$$ of $$R[X]$$. Although it's not the best basis for every task, familiarity wins.
+To tackle the new task, we shift mindset and methodology. The tools in the previous sections were from classical approximation theory. The tools in this theory have a throw-the-kitchen-sink-at-the-problem flavour. That is, we'll use some **rudimentary machine learning**. First, we'll revert to the standard basis[^9] $$1, X, X^2, \dots$$ of $$R[X]$$ and use an `sklearn` preprocessor to create polynomial features. Then, we'll generate a ton of data, instead of a handfull of nodes, and use cross-validation to find the best approximating polynomial by doing a grid search over the polynomial's degree. Specifically, let's use $$1,000$$ points $$(x_k,f(x_k))$$, where $$f:[-1,1]\mapsto\mathbb{R}$$ is the Runge function, and 10-fold cross-validation. Also, we will search over degrees ranging from $$1$$ to $$100$$.
 
+![Polynomial regression using 10-fold CV, 1,000 data points, and a grid search over degrees from 1 to 100](/assets/snips/runges_phenomenon/poly_regr_wo_shuffling.png)
 
+The result is kind of interesting. Some observations:
 
-*To be continued*
+1. Extrapolation to $$[-1.1, 1.1]$$ is still atrocious.
+1. The best degree singled out by 10-fold CV, with the given choice of hyperparameters number of data points, etc, is a lowly $$8$$.
+
+But there is something slightly subtle going on here that can be easy to miss without some prior experience with both the theory and implementation of ML algos.
 
 <hr>
 
@@ -113,3 +118,4 @@ Now we'll revert back to the standard basis $$1, X, X^2, \dots$$ of $$R[X]$$. Al
 [^6]: The fact that obvious relations can be defined between functions, such as a function $f$ being the **restriction** or the **continuation** of another fucntion $g$ is a different story. One has to maintain clarity of thought.
 [^7]: I won't even bother showing the extrapolation using the Lagrange polynomial. As you can guess, it's abysmal.
 [^8]: Probably not in politics or trading.
+[^9]: Although it's not the best basis for every task, familiarity wins.
