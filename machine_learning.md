@@ -63,6 +63,8 @@ are equidistant points in $$[0,1]$$ (aka nodes) and $$y_k\triangleq f(x_k)$$ are
 
 ![Lagrange interpolating polynomial for the Runge function](/assets/snips/runges_phenomenon/lagrange_approx_runge.png)
 
+One thing to keep in mind regarding the previous plots is that blue line is an ethereal object. A projection to reality of an abstract mathematical entity. All the interpolation process knows is the points in black. Our brain is too good at picking patterns, even ones that don't exist. We cannot blame the red line for wiggling between the nodes near the endpoints of the interval and, therefore, wildly diverging from the blue line. The interpolation process is completely unaware of the blue line. 
+
 ## A classical solution to the problem
 
 There is a classical well-known remedy to this problem: **choose your nodes wisely**. Specifically, since all truths in the real line pass through the complex plane (according to Hadamard), choose the nodes to be projections of equidistant points (the distance being measured by arc length) on the unit circle. In other words, a better choice is the *Chebyshev points of the 1st kind*. 
@@ -143,7 +145,7 @@ The result, in this case, is an interpolating polynomial of much higher degree $
 #### FOOTNOTES
 
 [^1]: In this note, the focus is on real-valued functions of a single real variable.
-[^2]: The emphasis is mine.
+[^1]: The emphasis is mine.
 [^3]: Among other things, 18th century mathematicians believed that all functions are real analytic. And they would fight you for it.
 [^4]: In fact, only values that can be represented in floating-point arithmetic.
 [^5]: [Cargo cult science](https://people.cs.uchicago.edu/~ravenben/cargocult.html)
