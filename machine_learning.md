@@ -135,7 +135,7 @@ The natural next thing to try is equidistant nodes + shuffling:
 The result, in this case, is an interpolating polynomial of much higher degree $$(71)$$ that overfits. The conclusion is **definitely not** a *general* rule of the kind "shuffling leads to overfitting". The whole point of this exercise is simply to carefully consider various aspects of applying different techniques to the same problem.
 
 <hr>
-**Exercise:** Try $$2,000$$ Chebyshev nodes, add some noise, and using shuffling in the cross validation.
+**Exercise:** Try $$2,000$$ Chebyshev nodes, add some noise, and use shuffling in the cross validation.
 <hr>
 
 #### FOOTNOTES
