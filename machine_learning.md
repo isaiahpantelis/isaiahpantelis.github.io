@@ -126,15 +126,15 @@ will not permute the rows of the data frame that contains the training data. Thi
 
 Quick sanity check: $$1,000$$ training data points with $$10$$ folds results in test sets of $$100$$ points to be used in the grid search. More importantly, the test sets are obtained by sliding a window from left to right[^10] inside $$[-1,1]$$.
 
-Often this is not the desired behaviour, especially if one is using an ML method that assumes i.i.d. samples. Here, however, there is no statistical inference&mdash;we're simply solving a least squares problem.[^11]
+Often this default choice of not shuffling the training samples is not the desired choise; especially if one is using an ML method that assumes i.i.d. samples, then it is better to reduce the correlation between samples. Here, however, there is no statistical inference&mdash;we're simply solving a curve-fitting problem via least squares.[^11]
 
 The natural next thing to try is equidistant nodes + shuffling:
 
 ![Polynomial regression using 10-fold CV, 1,000 equidistant data points, and a grid search over degrees from 1 to 100 with shuffling](/assets/snips/runges_phenomenon/poly_regr_with_shuffling.png)
 
-The result, in this case, is an interpolating polynomial of much higher degree $$(71)$$ that overfits. The conclusion is **definitely not** a *general* rule of the kind "shuffling leads to overfitting". The whole point of this exercise is simply to carefully consider various aspects of applying different techniques to the same problem.
+The result, in this case, is an interpolating polynomial of much higher degree $$(71)$$ that overfits. The conclusion is **definitely not** a *general* rule of the kind "shuffling leads to overfitting". The whole point of this exercise is simply to carefully consider various aspects of applying different techniques to the same problem. With that in mind, what we've learnt here is to pay attention to whether the training samples have been shuffled or not because it matters.
 
-
+## Yet another classical solution to the interpolation problem
 
 <hr>
 **Exercise:** Try $$2,000$$ Chebyshev nodes, add some noise, and use shuffling in the cross validation.
