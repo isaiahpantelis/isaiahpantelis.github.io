@@ -115,12 +115,14 @@ This is an intuitive outcome: with $$1,000$$ Chebyshev nodes in $I$ and with the
 But there is something else slightly subtle going on here as well that can be easy to miss without some prior familiarity with both the theory and implementation of ML algos. The constructor `KFold` has `False` as the default value for the argument `shuffle`; therefore, calling the constructor like this
 
 ```python
-cv = KFold(n_splits=n_splits)
+cv = KFold(n_splits=10)
 ```
 
 will not permute the rows of the data frame that contains the training data. This can be confirmed by checking the indices of the training set:
 
 ![Indices of the training set without shuffling](/assets/snips/runges_phenomenon/poly_regr_wo_shuffling_test_idx.png){: style="width: 50%; margin-left: auto; margin-right: auto; display: block;"}
+
+Quick sanity check: $$1,000$$ training data points with $$10$$ folds results in test sets of $$100$$ points to be used in the grid search. More importantly, the test sets are obtained by sliding a window from left to right[^10] inside $$[-1,1]$$.
 
 <hr>
 
@@ -133,3 +135,4 @@ will not permute the rows of the data frame that contains the training data. Thi
 [^7]: I won't even bother showing the extrapolation using the Lagrange polynomial. As you can guess, it's abysmal.
 [^8]: Probably not in politics or trading.
 [^9]: Although it's not the best basis for every task, familiarity wins.
+[^10]: The training data are sorted when they are generated.
