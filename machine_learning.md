@@ -120,7 +120,7 @@ cv = KFold(n_splits=n_splits)
 
 will not permute the rows of the data frame that contains the training data. This can be confirmed by checking the indices of the training set:
 
-![Indices of the training set without shuffling](/assets/snips/runges_phenomenon/poly_regr_wo_shuffling_test_idx.png){: style="width: 50%;"}
+![Indices of the training set without shuffling](/assets/snips/runges_phenomenon/poly_regr_wo_shuffling_test_idx.png){: style="width: 50%; margin-left: auto; margin-right: auto; display: block;"}
 
 <hr>
 
