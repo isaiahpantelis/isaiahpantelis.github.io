@@ -138,7 +138,7 @@ The result, in this case, is an interpolating polynomial of much higher degree $
 
 ## Yet another classical solution
 
-There are dozens of techniques in approximation theory (and practice), and the Lagrange and Chebyshev interpolations don't begin to exhaust the list. A family of polynmomials with many useful analytical properties[^1] is that of the Bernstein polynomials. The Bernstein polynomials converge uniformly to a given continuous function $$f:[a,b]\mapsto\mathbb{R}$$ defined on a compact interval $$[a,b]$$ in $$\mathbb{R}$$. Let's test them against the Runge function.
+There are dozens of techniques in approximation theory (and practice), and the Lagrange and Chebyshev interpolations don't begin to exhaust the list. A family of polynmomials with many useful analytical properties[^1] is that of the Bernstein polynomials. The Bernstein polynomials **converge uniformly** to a given continuous function $$f:[a,b]\mapsto\mathbb{R}$$ defined on a compact interval $$[a,b]$$ in $$\mathbb{R}$$. Let's test them against the Runge function.
 
 ![Approximation of the Runge function using Bernstein polynomials](/assets/snips/runges_phenomenon/bernstein_approx_runge.png)
 
@@ -161,4 +161,4 @@ There are dozens of techniques in approximation theory (and practice), and the L
 [^1]: Although it's not the best basis for every task, familiarity wins.
 [^1]: The training data are sorted when they are generated.
 [^1]: That of polynomial regression.
-[^1]: For example, they allow for a constructive proof of the Weierstrass approximation theorem which, in turn, implies that $$C[a,b]$$ (continuous functions on $$$[a,b]\subset\mathbb{R}$$) is separable. 
+[^1]: For example, they allow for a constructive proof of the Weierstrass approximation theorem which, in turn, implies that $$C[a,b]$$ (continuous functions on $$$[a,b]\subset\mathbb{R}$$) is separable. Moreover, if $$f$$ is increasing or convex, then so is $$B_n(f)$$, the $$n$$-th Bernstein polynomial.
