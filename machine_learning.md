@@ -143,10 +143,10 @@ There are dozens of techniques in approximation theory (and practice), and the L
 ![Approximation of the Runge function using Bernstein polynomials](/assets/snips/runges_phenomenon/bernstein_approx_runge.png)
 
 We can immediately observe the following:
-1. Although the Runge function is infinitely differentiable, convergence is somewhat slow. Even with $$300$$ nodes, the peak of the function is not fully captured by the approximation. The Chebyshev series, on the other hand, converges extremely fast.
-1. Convergence may be slow, but the interpolant is well behaved as the number of nodes increases: no wild oscillations.
+1. Although the Runge function is infinitely differentiable, convergence is slow. Even with degree $$n=300$$, the peak of the function is not fully captured by the approximation. The Chebyshev series, on the other hand, converges extremely fast.
+1. Convergence may be slow, but the interpolant is well behaved as $$n$$ increases: no wild oscillations.
 1. The previous two observations are a manifestation in practice of the fact that the Bernstein polynomials $$B_n(f)$$ converge **uniformly** as $$n\rightarrow\infty$$ (asymptotic result).
-1. In this example, where $$f$$ is the Runge function, **extrapolation** works extremely well, even way beyond the interval $$[-1,1]$$.
+1. Extrapolation falls off a cliff. It kind of works up to $$[-1.1,1.1]$$.
 
 <hr>
 **Exercise:** Try $$2,000$$ Chebyshev nodes, add some noise, and use shuffling in the cross validation.
