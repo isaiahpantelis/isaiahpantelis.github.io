@@ -138,7 +138,7 @@ The result, in this case, is an interpolating polynomial of much higher degree $
 
 ## Yet another classical solution
 
-There are dozens of techniques in approximation theory (and practice), and the Lagrange and Chebyshev interpolations don't begin to exhaust the list. A family of polynmomials with many useful analytical properties[^1] is that of the Bernstein polynomials. The Bernstein polynomials **converge uniformly** to a given continuous function $$f:[a,b]\mapsto\mathbb{R}$$ defined on a compact interval $$[a,b]$$ in $$\mathbb{R}$$. Let's test them against the Runge function.
+There are dozens of techniques in approximation theory (and practice), and the Lagrange and Chebyshev interpolations don't begin to exhaust the list. A family of polynmomials with many useful analytical properties[^12] is that of the Bernstein polynomials. The Bernstein polynomials **converge uniformly** to a given continuous function $$f:[a,b]\mapsto\mathbb{R}$$ defined on a compact interval $$[a,b]$$ in $$\mathbb{R}$$. Let's test them against the Runge function.
 
 ![Approximation of the Runge function using Bernstein polynomials](/assets/snips/runges_phenomenon/bernstein_approx_runge.png)
 
@@ -151,14 +151,14 @@ There are dozens of techniques in approximation theory (and practice), and the L
 #### FOOTNOTES
 
 [^1]: In this note, the focus is on real-valued functions of a single real variable.
-[^1]: The emphasis is mine.
-[^1]: Among other things, 18th century mathematicians believed that all functions are real analytic. And they would fight you for it.
-[^1]: In fact, only values that can be represented in floating-point arithmetic.
-[^1]: [Cargo cult science](https://people.cs.uchicago.edu/~ravenben/cargocult.html)
-[^1]: The fact that obvious relations can be defined between functions, such as a function $$f$$ being the **restriction** or the **continuation** of another function $$g$$ is a different story. One has to maintain clarity of thought.
-[^1]: I won't even bother showing the extrapolation using the Lagrange polynomial. As you can guess, it's abysmal.
-[^1]: Probably not in politics or trading.
-[^1]: Although it's not the best basis for every task, familiarity wins.
-[^1]: The training data are sorted when they are generated.
-[^1]: That of polynomial regression.
-[^1]: For example, they allow for a constructive proof of the Weierstrass approximation theorem which, in turn, implies that $$C[a,b]$$ (continuous functions on $$$[a,b]\subset\mathbb{R}$$) is separable. Moreover, if $$f$$ is increasing or convex, then so is $$B_n(f)$$, the $$n$$-th Bernstein polynomial. Another interesting property of the "Bernstein operator" $$B_n$$ is that it is contracting with respect to the total variation $$V(f)$$ of a function $$f$$ ($$V(f)\triangleq\int_a^b{\\|}f'(x){\\|}\mathrm{d}x$$).
+[^2]: The emphasis is mine.
+[^3]: Among other things, 18th century mathematicians believed that all functions are real analytic. And they would fight you for it.
+[^4]: In fact, only values that can be represented in floating-point arithmetic.
+[^5]: [Cargo cult science](https://people.cs.uchicago.edu/~ravenben/cargocult.html)
+[^6]: The fact that obvious relations can be defined between functions, such as a function $$f$$ being the **restriction** or the **continuation** of another function $$g$$ is a different story. One has to maintain clarity of thought.
+[^7]: I won't even bother showing the extrapolation using the Lagrange polynomial. As you can guess, it's abysmal.
+[^8]: Probably not in politics or trading.
+[^9]: Although it's not the best basis for every task, familiarity wins.
+[^10]: The training data are sorted when they are generated.
+[^11]: That of polynomial regression.
+[^12]: For example, they allow for a constructive proof of the Weierstrass approximation theorem which, in turn, implies that $$C[a,b]$$ (continuous functions on $$$[a,b]\subset\mathbb{R}$$) is separable. Moreover, if $$f$$ is increasing or convex, then so is $$B_n(f)$$, the $$n$$-th Bernstein polynomial. Another interesting property of the "Bernstein operator" $$B_n$$ is that it is contracting with respect to the total variation $$V(f)$$ of a function $$f$$ ($$V(f)\triangleq\int_a^b{\\|}f'(x){\\|}\mathrm{d}x$$).
