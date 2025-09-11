@@ -108,11 +108,11 @@ The result is kind of interesting. Some observations:
 1. Extrapolation to $$[-1.1, 1.1]$$ is still atrocious. Put differently, despite the use of 10-fold CV on the training set $$[-1,1]$$, performance on the test sets $$[-1.1,-1]$$ and $$[1,1.1]$$ is underwhelming at best. 
 1. The best degree singled out by 10-fold CV, with the given choice of hyperparameters, number of data points, etc, is a lowly $$8$$.
 
-Out of curiosity, we can repeat this last experiment using the same Chebyshev nodes as before:
+Out of curiosity, we can repeat this last experiment using the same Chebyshev nodes as before. That is, we are going to perform polynomial regression but the training data are generated using the Chebyshev points of the 1st kind:
 
 ![Polynomial regression using 10-fold CV, 1,000 Chebyshev nodes, and a grid search over degrees from 1 to 100](/assets/snips/runges_phenomenon/poly_regr_wo_shuffling_cheb_nodes.png)
 
-This is an intuitive outcome: with $$1,000$$ Chebyshev nodes in $I$ and with the characteristic property that Chebyshev nodes have of clustering towards the endpoints of the interval, there isn't enough room for the approximating polynomial to start wiggling. At the same time, performance on the test set (i.e., extrapolation) is even worse than before.
+This is an intuitive outcome: with $$1,000$$ Chebyshev nodes in $$I$$ and with the characteristic property that Chebyshev nodes have of clustering towards the endpoints of the interval, there isn't enough room for the approximating polynomial to start wiggling. At the same time, performance on the test set (i.e., extrapolation) is even worse than before.
 
 ## To shuffle or not to shuffle
 
