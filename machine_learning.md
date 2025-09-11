@@ -136,11 +136,13 @@ The natural next thing to try is equidistant nodes + shuffling:
 
 The result, in this case, is an interpolating polynomial of much higher degree $$(71)$$ that overfits. The conclusion is **definitely not** a *general* rule of the kind "shuffling leads to overfitting". The whole point of this exercise is simply to carefully consider various aspects of applying different techniques to the same problem. With that in mind, what we've learnt here is to pay attention to whether the training samples have been shuffled or not because it matters.
 
-## Yet another classical solution to the interpolation problem
+## Yet another classical solution
 
-There are dozens of interpolation techniques and the Lagrange and Chebyshev interpolations don't begin to exhaust the available methods. A famous and practical method that works well in practice is to use Bernstein polynomials. Let's test them against the Runge function.
+There are dozens of techniques in approximation theory (and practice), and the Lagrange and Chebyshev interpolations don't begin to exhaust the list. A family of polynmomials with many useful analytical properties[^1] is that of the Bernstein polynomials. The Bernstein polynomials converge uniformly to a given continuous function $$f:[a,b]\mapsto\mathbb{R}$$ defined on a compact interval $$[a,b]$$ in $$\mathbb{R}$$. Let's test them against the Runge function.
 
 ![Approximation of the Runge function using Bernstein polynomials](/assets/snips/runges_phenomenon/bernstein_approx_runge.png)
+
+
 
 <hr>
 **Exercise:** Try $$2,000$$ Chebyshev nodes, add some noise, and use shuffling in the cross validation.
@@ -150,7 +152,7 @@ There are dozens of interpolation techniques and the Lagrange and Chebyshev inte
 
 [^1]: In this note, the focus is on real-valued functions of a single real variable.
 [^1]: The emphasis is mine.
-[^3]: Among other things, 18th century mathematicians believed that all functions are real analytic. And they would fight you for it.
+[^1]: Among other things, 18th century mathematicians believed that all functions are real analytic. And they would fight you for it.
 [^4]: In fact, only values that can be represented in floating-point arithmetic.
 [^5]: [Cargo cult science](https://people.cs.uchicago.edu/~ravenben/cargocult.html)
 [^6]: The fact that obvious relations can be defined between functions, such as a function $$f$$ being the **restriction** or the **continuation** of another function $$g$$ is a different story. One has to maintain clarity of thought.
@@ -159,3 +161,4 @@ There are dozens of interpolation techniques and the Lagrange and Chebyshev inte
 [^9]: Although it's not the best basis for every task, familiarity wins.
 [^10]: The training data are sorted when they are generated.
 [^11]: That of polynomial regression.
+[^1]: For example, they allow for a constructive proof of the Weierstrass approximation theorem which, in turn, implies that $$C[a,b]$$ (continuous functions on $$$[a,b]\subset\mathbb{R}$$) is separable. 
