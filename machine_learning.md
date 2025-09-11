@@ -153,12 +153,12 @@ There are dozens of techniques in approximation theory (and practice), and the L
 [^1]: In this note, the focus is on real-valued functions of a single real variable.
 [^1]: The emphasis is mine.
 [^1]: Among other things, 18th century mathematicians believed that all functions are real analytic. And they would fight you for it.
-[^4]: In fact, only values that can be represented in floating-point arithmetic.
-[^5]: [Cargo cult science](https://people.cs.uchicago.edu/~ravenben/cargocult.html)
-[^6]: The fact that obvious relations can be defined between functions, such as a function $$f$$ being the **restriction** or the **continuation** of another function $$g$$ is a different story. One has to maintain clarity of thought.
-[^7]: I won't even bother showing the extrapolation using the Lagrange polynomial. As you can guess, it's abysmal.
-[^8]: Probably not in politics or trading.
-[^9]: Although it's not the best basis for every task, familiarity wins.
-[^10]: The training data are sorted when they are generated.
-[^11]: That of polynomial regression.
+[^1]: In fact, only values that can be represented in floating-point arithmetic.
+[^1]: [Cargo cult science](https://people.cs.uchicago.edu/~ravenben/cargocult.html)
+[^1]: The fact that obvious relations can be defined between functions, such as a function $$f$$ being the **restriction** or the **continuation** of another function $$g$$ is a different story. One has to maintain clarity of thought.
+[^1]: I won't even bother showing the extrapolation using the Lagrange polynomial. As you can guess, it's abysmal.
+[^1]: Probably not in politics or trading.
+[^1]: Although it's not the best basis for every task, familiarity wins.
+[^1]: The training data are sorted when they are generated.
+[^1]: That of polynomial regression.
 [^1]: For example, they allow for a constructive proof of the Weierstrass approximation theorem which, in turn, implies that $$C[a,b]$$ (continuous functions on $$$[a,b]\subset\mathbb{R}$$) is separable. 
