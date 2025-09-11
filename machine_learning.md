@@ -161,4 +161,4 @@ There are dozens of techniques in approximation theory (and practice), and the L
 [^1]: Although it's not the best basis for every task, familiarity wins.
 [^1]: The training data are sorted when they are generated.
 [^1]: That of polynomial regression.
-[^1]: For example, they allow for a constructive proof of the Weierstrass approximation theorem which, in turn, implies that $$C[a,b]$$ (continuous functions on $$$[a,b]\subset\mathbb{R}$$) is separable. Moreover, if $$f$$ is increasing or convex, then so is $$B_n(f)$$, the $$n$$-th Bernstein polynomial.
+[^1]: For example, they allow for a constructive proof of the Weierstrass approximation theorem which, in turn, implies that $$C[a,b]$$ (continuous functions on $$$[a,b]\subset\mathbb{R}$$) is separable. Moreover, if $$f$$ is increasing or convex, then so is $$B_n(f)$$, the $$n$$-th Bernstein polynomial. Another interesting property of the "Bernstein operator" $$B_n$$ is that it is contracting with respect to the total variation $$V(f)$$ of a function $$f$$ ($$V(f)\triangleq\int_a^b{\\|}f'(x){\\|}\mathrm{d}x$$).
