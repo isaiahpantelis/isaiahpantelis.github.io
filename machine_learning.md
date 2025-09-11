@@ -83,7 +83,7 @@ There is no sleight of hand &mdash; Chebyshev polynomials **do** work extremely 
 At this point we know that:
 
 1. Exact interpolation at equidistant points *can* be a terrible idea.
-2. Exact interpolation at cleverly sampled points *can* be a fantastic idea.
+1. Exact interpolation at cleverly sampled points *can* be a fantastic idea.
 
 It all depends on the task at hand. But one can ask **other** interesting questions. For example, is a good interpolant, such as the one provided by the Chebyshev interpolation, somehow inherently tied to the function that generated the interpolated values? Or, put differently, is a good interpolant "learning" the data generation mechanism? Now, a mathematically literate person (say, someone who has been exposed to post 18-th century mathematics)[^3] should immediately offer an emphatic "no" or an emphatic "no, unless you prove otherwise". Given that two functions can agree on an **interval** in the real line and still be completely different functions, there is no reason that agreement on finitely many values[^4] would imply some deeper structural link between the function and the interpolant.
 
@@ -142,7 +142,11 @@ There are dozens of techniques in approximation theory (and practice), and the L
 
 ![Approximation of the Runge function using Bernstein polynomials](/assets/snips/runges_phenomenon/bernstein_approx_runge.png)
 
-
+We can immediately observe the following:
+1. Although the Runge function is infinitely differentiable, convergence is somewhat slow. Even with $$300$$ nodes, the peak of the function is not fully captured by the approximation. The Chebyshev series, on the other hand, converges extremely fast.
+1. Convergence may be slow, but the interpolant is well behaved as the number of nodes increases: no wild oscillations.
+1. The previous two observations are a manifestation in practice of the fact that the Bernstein polynomials $$B_n(f)$$ converge **uniformly** as $$n\rightarrow\infty$$ (asymptotic result).
+1. In this example, where $$f$$ is the Runge function, **extrapolation** works extremely well, even way beyond the interval $$[-1,1]$$.
 
 <hr>
 **Exercise:** Try $$2,000$$ Chebyshev nodes, add some noise, and use shuffling in the cross validation.
@@ -161,4 +165,4 @@ There are dozens of techniques in approximation theory (and practice), and the L
 [^9]: Although it's not the best basis for every task, familiarity wins.
 [^10]: The training data are sorted when they are generated.
 [^11]: That of polynomial regression.
-[^bernstein-polynomials]: For example, they allow for a constructive proof of the Weierstrass approximation theorem which, in turn, implies that $$C[a,b]$$ (continuous functions on $$$[a,b]\subset\mathbb{R}$$) is separable. Moreover, if $$f$$ is increasing or convex, then so is $$B_n(f)$$, the $$n$$-th Bernstein polynomial. Another interesting property of the "Bernstein operator" $$B_n$$ is that it is contracting with respect to the total variation $$V(f)$$ of a function $$f$$ ($$V(f)\triangleq\int_a^b{\\|}f'(x){\\|}\mathrm{d}x$$).
+[^bernstein-polynomials]: For example, they allow for a constructive proof of the Weierstrass approximation theorem which, in turn, implies that $$C[a,b]$$ (continuous functions on $$[a,b]\subset\mathbb{R}$$) is separable. Moreover, if $$f$$ is increasing or convex, then so is $$B_n(f)$$, the $$n$$-th Bernstein polynomial. Another interesting property of the "Bernstein operator" $$B_n$$ is that it is contracting with respect to the total variation $$V(f)$$ of a function $$f$$ ($$V(f)\triangleq\int_a^b{\\|}f'(x){\\|}\mathrm{d}x$$).
