@@ -77,7 +77,7 @@ Because eyeballing pixels when it comes to approximation errors can be extremely
 
 That the graphs of the absolute and relative errors look identical is a coincidence due to the range of values of $$x$$ and $$y$$. No need to worry about that here. But the fact that even the *relative error* approaches zero, although the function values tend to zero, is worth appreciating. 
 
-There is no sleight of hand &mdash; Chebyshev polynomials **do** work extremely well for certain tasks; and it's an entire rabbit hole to go down if one is willing to. An excellent book of applied mathematics that demonstrates some powerful techniques, especially for root finding, is [J. Boyd's book](https://www.google.ca/books/edition/Solving_Transcendental_Equations/29CgBAAAQBAJ?hl=en&gbpv=0). There is also the whole "chebfun" business that spun out of these ideas (google is your friend). The overarching principle is that "continuous mathematical objects" (whatever that means) can be replaced or proxied up to machine precision by their Chebyshev approximations. But there is more magic to it, actually: from the proxy one can compute roots, derivatives, and integrals. The major limitation of this paradigm is the inability to handle high-dimensional problems, but enough said for now (and, no, "tensor products" have not fully addressed the limitation).
+There is no sleight of hand &mdash; Chebyshev polynomials **do** work extremely well for certain tasks; and it's an entire rabbit hole to go down if one is willing to. An excellent book of applied mathematics that demonstrates some powerful techniques, especially for root finding, is [J. Boyd's book](https://www.google.ca/books/edition/Solving_Transcendental_Equations/29CgBAAAQBAJ?hl=en&gbpv=0). There is also the whole "chebfun" business that spun out of these ideas (google is your friend). The overarching principle is that "continuous mathematical objects" (whatever that means) can be replaced or proxied up to machine precision by their Chebyshev approximations. But there is more magic to it, actually: from the proxy one can compute roots, derivatives, and integrals. The major limitation of this paradigm is the inability to handle high-dimensional problems,[^cheb-high-dim] but that's enough about the Chebyshev technology for now.
 
 ## A different problem
 At this point we know that:
@@ -156,6 +156,7 @@ We can immediately observe the following:
 
 [^1]: In this note, the focus is on real-valued functions of a single real variable.
 [^2]: The emphasis is mine.
+[^cheb-high-dim]: No, "tensor products" have not addressed the limitation.
 [^3]: Among other things, 18th century mathematicians believed that all functions are real analytic. And they would fight you for it.
 [^4]: In fact, only values that can be represented in floating-point arithmetic.
 [^5]: [Cargo cult science](https://people.cs.uchicago.edu/~ravenben/cargocult.html)
