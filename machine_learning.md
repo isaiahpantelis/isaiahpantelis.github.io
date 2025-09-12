@@ -95,7 +95,7 @@ This is how the Chebyshev interpolant, built out of $$24$$ nodes, behaves on $$J
 
 Nothing to see here, really. Again, We fed the Chebyshev machinery a function $$f:I\mapsto\mathbb{R}$$ and the machinery did an excellent job at approximating it. But now we are checking the constructed approximation against a different function $$\tilde{f}:J\mapsto\mathbb{R}$$.
 
-But communicating intent clearly is important in most walks of life.[^8] So, then, let's reframe everything: let's agree now that what we *really* want is *some* kind of approximation that, well, approximates adequately the points used to build the approximation itself, but, also, we want the approximating object, in this case the interpolant, to do a decent job when presented with **new data never seen before**. Or, as is often said, we want to "learn" from the data $$(x,f(x))$$ in a way that *generalises well*.[^en-spelling] This approach may offer a satisfactory illusion of "learning the data generation mechanism". The way to assess performance on this new task is usually called "cross-validation" (CV).
+But communicating intent clearly is important in most walks of life.[^8] So, then, let's reframe everything: let's agree now that what we *really* want is *some* kind of approximation that, well, approximates adequately the points used to build the approximation itself, but, also, we want the approximating object, in this case the interpolant, to do a decent job when presented with **new data never seen before**. Or, as is often said, we want to "learn" from the data $$(x,f(x))$$ in a way that *generalises well*.[^en-spelling] Such an approach may offer a satisfactory illusion of "learning the data generation mechanism". The way to assess performance on this new task is usually called "cross-validation" (CV).
 
 ## Polynomial regression with cross-validation
 
@@ -138,7 +138,7 @@ The result, in this case, is an interpolating polynomial of much higher degree $
 
 ## Yet another classical solution
 
-There are dozens of techniques in approximation theory (and practice), and the Lagrange and Chebyshev interpolations don't begin to exhaust the list. A family of polynmomials with many useful analytical properties[^bernstein-polynomials] is that of the Bernstein polynomials. The Bernstein polynomials **converge uniformly** to a given continuous function $$f:[a,b]\mapsto\mathbb{R}$$ defined on a compact interval $$[a,b]$$ in $$\mathbb{R}$$. Let's test them against the Runge function.
+There are dozens of techniques in approximation theory (and practice), and the Lagrange and Chebyshev interpolations don't begin to exhaust the list. A family of polynomials with many useful analytical properties[^bernstein-polynomials] is that of the Bernstein polynomials. The Bernstein polynomials **converge uniformly** to a given continuous function $$f:[a,b]\mapsto\mathbb{R}$$ defined on a compact interval $$[a,b]$$ in $$\mathbb{R}$$. Let's test them against the Runge function.
 
 ![Approximation of the Runge function using Bernstein polynomials](/assets/snips/runges_phenomenon/bernstein_approx_runge.png)
 
