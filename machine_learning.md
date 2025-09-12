@@ -63,7 +63,7 @@ are equidistant points in $$[0,1]$$ (aka nodes) and $$y_k\triangleq f(x_k)$$ are
 
 ![Lagrange interpolating polynomial for the Runge function](/assets/snips/runges_phenomenon/lagrange_approx_runge.png)
 
-One thing to keep in mind regarding the previous plots is that blue line is an ethereal object. A projection to reality of an abstract mathematical entity. All the interpolation process knows is the points in black. Our brain is too good at picking patterns, even ones that don't exist. We cannot blame the red line for wiggling between the nodes near the endpoints of the interval and, therefore, wildly diverging from the blue line. The interpolation process is completely unaware of the blue line as a globally defined object. 
+One thing to keep in mind regarding the previous plots is that the blue line is an ethereal object. A projection to reality of an abstract mathematical entity. All the interpolation process knows about is the points in black. Our brain is too good at picking up patterns, even ones that don't exist. We cannot blame the red line for wiggling between the nodes near the endpoints of the interval and, therefore, wildly diverging from the blue line. The interpolation process is completely unaware of the blue line as a globally defined object. 
 
 ## A classical solution to the problem
 
@@ -75,7 +75,7 @@ Because eyeballing pixels when it comes to approximation errors can be extremely
 
 ![Chebyshev interpolation errors](/assets/snips/runges_phenomenon/cheb_interp_errors.png)
 
-That the graphs of the absolute and relative errors look identical is a coincidence due to the range of values of $$x$$ and $$y$$. No need to worry about that here. But the fact that even the relative zero approaches zero, although the function values tend to zero is worth appreciating. 
+That the graphs of the absolute and relative errors look identical is a coincidence due to the range of values of $$x$$ and $$y$$. No need to worry about that here. But the fact that even the *relative error* approaches zero, although the function values tend to zero, is worth appreciating. 
 
 There is no sleight of hand &mdash; Chebyshev polynomials **do** work extremely well for certain tasks; and it's an entire rabbit hole to go down if one is willing to. An excellent book of applied mathematics that demonstrates some powerful techniques, especially for root finding, is [J. Boyd's book](https://www.google.ca/books/edition/Solving_Transcendental_Equations/29CgBAAAQBAJ?hl=en&gbpv=0). There is also the whole "chebfun" business that spun out of these ideas (google is your friend). The overarching principle is that "continuous mathematical objects" (whatever that means) can be replaced or proxied up to machine precision by their Chebyshev approximations. But there is more magic to it, actually: from the proxy one can compute roots, derivatives, and integrals. The major limitation of this paradigm is the inability to handle high-dimensional problems, but enough said for now (and, no, "tensor products" have not fully addressed the limitation).
 
