@@ -150,7 +150,7 @@ We can immediately observe the following:
 
 ## Overfitting
 
-In reality, the data generation mechanism is not known otherwise there wouldn't be a need to learn anything. However, one may know *something* about the source of the data. For example, if we pretend that the Runge function is black box that outputs $$f(x)$$ for every $$x$$ we supply as input, we may also know somehow that $$f(x)$$ is always positive and that both $$f(x)$$ and $${|}f'(x){|}$$ decrease as $${|}x{|}$$ increases. Then, we can incorporate this "domain knowledge" in the learning process by penalising large values of $$f(x)$$ and $${\|}f'(x){\|}$$ for large values of $${\|}x{\|}$$.
+In reality, the data generation mechanism is not known otherwise there wouldn't be a need to learn anything. However, one may know *something* about the source of the data. For example, if we pretend that the Runge function is black box that outputs $$f(x)$$ for every $$x$$ we supply as input, we may also know somehow that $$f(x)$$ is always positive and that both $$f(x)$$ and $${\|}f'(x){\|}$$ decrease as $${\|}x{\|}$$ increases. Then, we can incorporate this "domain knowledge" in the learning process by penalising large values of $$f(x)$$ and $${\|}f'(x){\|}$$ for large values of $${\|}x{\|}$$.
 
 #### FOOTNOTES
 
