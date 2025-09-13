@@ -33,7 +33,7 @@ def ground_truth(x: np.array, noise: bool = False, seed: int = None) -> pd.DataF
 
     if noise:
         if seed is None:
-            raise ValueError('If `noise is True` then `seed` has to be of type `int`.')
+            raise ValueError('If `noise is True` then `seed` has to a non-negative integer.')
         rng = np.random.default_rng(seed=seed)
         noise_vector = rng.normal(loc=0.0, scale=0.01, size=x.shape)
     else:
