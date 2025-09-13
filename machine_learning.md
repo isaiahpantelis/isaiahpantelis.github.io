@@ -148,6 +148,10 @@ We can immediately observe the following:
 1. The previous two observations are a manifestation in practice of the fact that the Bernstein polynomials $$B_n(f)$$ converge **uniformly** as $$n\rightarrow\infty$$ (**asymptotic** result).
 1. Extrapolation falls off a cliff. It kind of works up to $$[-1.1,1.1]$$.
 
+## Overfitting
+
+In reality, the data generation mechanism is not known otherwise there wouldn't be a need to learn anything. However, one may know *something* about the source of the data. For example, if we pretend that the Runge function is black box that outputs $$f(x)$$ for every $$x$$ we supply as input, we may also know somehow that $$f(x)$$ is always positive and that both $$f(x)$$ and $${|}f'(x){|}$$ decrease as $${|}x{|}$$ increases.
+
 #### FOOTNOTES
 
 [^1]: In this note, the focus is on real-valued functions of a single real variable.
