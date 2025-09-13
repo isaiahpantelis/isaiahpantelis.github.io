@@ -112,6 +112,10 @@ Out of curiosity, we can repeat this last experiment using Chebyshev nodes as be
 
 This is an intuitive outcome: with $$1,000$$ Chebyshev nodes in $$I$$ and with the characteristic property that Chebyshev nodes have of clustering towards the endpoints of the interval, there isn't enough room for the approximating polynomial to start wiggling. At the same time, performance on the test set (i.e., extrapolation) is even worse than before.
 
+<hr>
+**Exercise:** Try $$2,000$$ Chebyshev nodes, add some noise, and use shuffling in the cross validation.
+<hr>
+
 ## To shuffle or not to shuffle
 
 But there is something else slightly subtle going on here as well that can be easy to miss without some prior familiarity with both the theory and implementation of ML algos. The constructor `KFold` has `False` as the default value for the argument `shuffle`; therefore, calling the constructor like this
@@ -141,12 +145,8 @@ There are dozens of techniques in approximation theory and practice, and the Lag
 We can immediately observe the following:
 1. Although the Runge function is infinitely differentiable, convergence is slow. Even with degree $$n=300$$, the peak of the function is not fully captured by the approximation. The Chebyshev series, on the other hand, converges extremely fast.
 1. Convergence may be slow, but the interpolant is well behaved as $$n$$ increases: no wild oscillations.
-1. The previous two observations are a manifestation in practice of the fact that the Bernstein polynomials $$B_n(f)$$ converge **uniformly** as $$n\rightarrow\infty$$ (asymptotic result).
+1. The previous two observations are a manifestation in practice of the fact that the Bernstein polynomials $$B_n(f)$$ converge **uniformly** as $$n\rightarrow\infty$$ (**asymptotic** result).
 1. Extrapolation falls off a cliff. It kind of works up to $$[-1.1,1.1]$$.
-
-<hr>
-**Exercise:** Try $$2,000$$ Chebyshev nodes, add some noise, and use shuffling in the cross validation.
-<hr>
 
 #### FOOTNOTES
 
