@@ -106,7 +106,7 @@ The result is kind of interesting. Some observations:
 1. Extrapolation to $$[-1.1, 1.1]$$ is still atrocious. Put differently, despite the use of 10-fold CV on the training set $$[-1,1]$$, performance on the test sets $$[-1.1,-1]$$ and $$[1,1.1]$$ is underwhelming at best. 
 1. The best degree singled out by 10-fold CV, with the given choice of hyperparameters, number of data points, etc, is a lowly $$8$$.
 
-Out of curiosity, we can repeat this last experiment using the same Chebyshev nodes as before. That is, we are going to perform polynomial regression but the training data are generated using the Chebyshev points of the 1st kind:
+Out of curiosity, we can repeat this last experiment using Chebyshev nodes as before. That is, we are going to perform polynomial regression but the training data $$(x_k,f(x_k))$$ will be generated using 1,000 Chebyshev points of the 1st kind:
 
 ![Polynomial regression using 10-fold CV, 1,000 Chebyshev nodes, and a grid search over degrees from 1 to 100](/assets/snips/runges_phenomenon/poly_regr_wo_shuffling_cheb_nodes.png)
 
@@ -120,7 +120,7 @@ But there is something else slightly subtle going on here as well that can be ea
 cv = KFold(n_splits=10)
 ```
 
-will not permute the rows of the data frame that contains the training data. This can be confirmed by checking the indices of the training set:
+will not split the training data randomly during the grid search (no shuffling) but sequentially. This can be confirmed by checking the indices of the training set:
 
 ![Indices of the training set without shuffling](/assets/snips/runges_phenomenon/poly_regr_wo_shuffling_test_idx.png){: style="width: 50%; margin-left: auto; margin-right: auto; display: block;"}
 
