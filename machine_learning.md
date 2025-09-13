@@ -150,7 +150,7 @@ We can immediately observe the following:
 
 ## Overfitting
 
-In reality, the data generation mechanism is not known otherwise there wouldn't be a need to learn anything. However, one may know *something* about the source of the data. For example, if we pretend that the Runge function is black box that outputs $$f(x)$$ for every $$x$$ we supply as input, we may also know somehow that $$f(x)$$ is always positive and that both $$f(x)$$ and $${\|}f'(x){\|}$$ decrease as $${\|}x{\|}$$ increases. Then, we can incorporate this "domain knowledge" in the learning process by penalising large values of $$f(x)$$ and $${\|}f'(x){\|}$$ for large values of $${\|}x{\|}$$.
+In reality, the data generation mechanism is not known otherwise there wouldn't be a need to learn anything. However, one may know *something* about the source of the data. For example, if we pretend that the Runge function is black box that outputs $$f(x)$$ for every $$x$$ we supply as input, we may also know somehow that $$f(x)$$ is always positive and that both $$f(x)$$ and $${\|}f'(x){\|}$$ decrease as $${\|}x{\|}$$ increases. Then, we can incorporate this "domain knowledge" in the learning process by penalising large values of $$f(x)$$ and $${\|}f'(x){\|}$$ for large values of $${\|}x{\|}$$. 
 
 #### FOOTNOTES
 
@@ -164,4 +164,4 @@ In reality, the data generation mechanism is not known otherwise there wouldn't 
 [^8]: Probably not in politics or trading.
 [^9]: Although it's not the best basis for every task, familiarity wins.
 [^10]: The training data are sorted when they are generated.
-[^bernstein-polynomials]: For example, they allow for a constructive proof of the Weierstrass approximation theorem which, in turn, implies that $$C[a,b]$$ (continuous functions on $$[a,b]\subset\mathbb{R}$$) is separable. Moreover, if $$f$$ is increasing or convex, then so is $$B_n(f)$$, the $$n$$-th Bernstein polynomial. Another interesting property of the "Bernstein operator" $$B_n$$ is that it is contracting with respect to the total variation $$V(f)$$ of a function $$f$$ $$\left(V(f)\triangleq\int_a^b{\\|}f'(x){\\|}\mathrm{d}x\right)$$.
+[^bernstein-polynomials]: For example, they allow for a constructive proof of the Weierstrass approximation theorem which, in turn, implies that $$C[a,b]$$ (continuous functions on $$[a,b]\subset\mathbb{R}$$) is separable. Moreover, if $$f$$ is increasing or convex, then so is $$B_n(f)$$, the $$n$$-th Bernstein polynomial. Another interesting property of the "Bernstein operator" $$B_n$$ is that it is contracting with respect to the total variation $$V(f)$$ of a function $$f$$, where $$V(f)\triangleq\int_a^b{\\|}f'(x){\\|}\mathrm{d}x$$.
