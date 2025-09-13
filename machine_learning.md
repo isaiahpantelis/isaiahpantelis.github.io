@@ -124,11 +124,9 @@ will not split the training data randomly during the grid search (no shuffling) 
 
 ![Indices of the training set without shuffling](/assets/snips/runges_phenomenon/poly_regr_wo_shuffling_test_idx.png){: style="width: 50%; margin-left: auto; margin-right: auto; display: block;"}
 
-Quick sanity check: $$1,000$$ training data points with $$10$$ folds results in test sets of $$100$$ points to be used in the grid search. More importantly, the test sets are obtained by sliding a window from left to right[^10] inside $$[-1,1]$$.
+Quick sanity check: $$1,000$$ training data points with $$10$$ folds result in test sets of $$100$$ points each to be used in the grid search. More importantly, the test sets are obtained by sliding a window from left to right[^10] inside $$[-1,1]$$.
 
-Often this default choice of not shuffling the training samples is not the desired choise; especially if one is using an ML method that assumes i.i.d. samples, then it is better to reduce the correlation between samples. Here, however, there is no statistical inference&mdash;we're simply solving a curve-fitting problem via least squares.[^11]
-
-The natural next thing to try is equidistant nodes + shuffling:
+Often this default choice of not shuffling the training samples is not the desired choise. Especially if one is using an ML method that assumes i.i.d. samples, then it is better to reduce the dependence between samples. That said, there is no statistical inference taking place here&mdash;we're simply solving a curve-fitting problem via least squares. The natural next thing to try is equidistant nodes + shuffling:
 
 ![Polynomial regression using 10-fold CV, 1,000 equidistant data points, and a grid search over degrees from 1 to 100 with shuffling](/assets/snips/runges_phenomenon/poly_regr_with_shuffling.png)
 
@@ -162,5 +160,4 @@ We can immediately observe the following:
 [^8]: Probably not in politics or trading.
 [^9]: Although it's not the best basis for every task, familiarity wins.
 [^10]: The training data are sorted when they are generated.
-[^11]: That of polynomial regression.
 [^bernstein-polynomials]: For example, they allow for a constructive proof of the Weierstrass approximation theorem which, in turn, implies that $$C[a,b]$$ (continuous functions on $$[a,b]\subset\mathbb{R}$$) is separable. Moreover, if $$f$$ is increasing or convex, then so is $$B_n(f)$$, the $$n$$-th Bernstein polynomial. Another interesting property of the "Bernstein operator" $$B_n$$ is that it is contracting with respect to the total variation $$V(f)$$ of a function $$f$$ ($$V(f)\triangleq\int_a^b{\\|}f'(x){\\|}\mathrm{d}x$$).
