@@ -9,6 +9,7 @@ markdown: kramdown
 
 #### CONTENTS
 - [An old problem with an old solution](#an-old-problem-with-an-old-solution)
+  - [Runge's function](#runges-function)
 
 <hr>
 
