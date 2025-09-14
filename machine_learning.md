@@ -173,6 +173,13 @@ The results are as follows:
 
 ![poly-regr-cross-validation](/assets/snips/runges_phenomenon/poly_regr_cross_validation.png)
 
+Note:
+- Because the validation error is astronomical, the plot shows the log of the validation error.
+- The "optimal" degree estimated with cross validation is 14. This cannot be seen in the plot (the lines in the top plot appear flat from degree 12 onwards) because it beats the average test error of the higher degrees at the fourth decimal point.
+- The trends of the ploted lines are the **hallmark of overfitting**: as the degree increases, the (average) train and test erros decrease, but the validation error increases. This is a concise visual summary of the fact that the graph of the approximating polynomial resembles more and more the graph of the Runge function on $$[-1,1]$$, but extrapolating outside this interval is hopeless.
+
+For this example, I generated data on $$[-2,2]$$ and kept $$[-2,-1]\bigcup[1,2]$$ as validation set. You can, of course, select a *random* subset as the validation set. The situation here is slightly different than the standard textbook example where the fitted polynomial passes through all the training data points and oscillates in-between, Lagrange style. Here, there are thousands of training data points and the degree was only allowed to go up to $$25$$.
+
 The code that performs the cross validation is short[^short-code] and straightforward:[^uv]
 
 ```python
@@ -333,6 +340,10 @@ def run() -> None:
 if __name__ == '__main__':
     run()
 ```
+
+## Recap
+
+blah
 
 <hr>
 
