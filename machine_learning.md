@@ -162,7 +162,16 @@ In reality, the data generation mechanism is not known otherwise there wouldn't 
 
 ### Learning curves
 
-The mighty `scikit-learn` library[^sklearn-critique] provides various utilities for evaluating model calibration and performance. As a starting point, one can look at the documentation for [Model Selection](https://scikit-learn.org/stable/api/sklearn.model_selection.html). In what follows, we'll adopt the point of view of someone who doesn't want to know about Analysis, Approximation Theory, and especially about old French math textbooks. The question to answer is: 
+The mighty `scikit-learn` library[^sklearn-critique] provides various utilities for evaluating model calibration and performance. As a starting point, one can look at the documentation for [Model Selection](https://scikit-learn.org/stable/api/sklearn.model_selection.html). However, to use these utilities effectively, it is important to know what happens under the hood&mdash;how the data are split, how the model is evaluated, etc. To this end, scikit-learn's documentation offers ample examples, code samples, and explanations. The modest goal of this section is to use a more low-level approach, so that we have more control over what is going on, while keeping things simple. The roadmap is as follows:
+
+- Generate a large number of data points $$(x_k,f(x_k))$$
+- Single out a subset of the data points to be used as validation set and that will **not** be used for model calibration.
+- Use grid search on the complement of the validation set to calibrate the model's parameters which, in this case, is simply the order of the approximating polynomial.
+- For each candidate value of the polynomial degree there will be a predefined number of folds and, hence, an average train and test error. Compare, then, for each tentative value of the polynomial degree, (i) the average train error, (ii) the average test error, and (iii) the error on the validation set.
+
+The results are as follows:
+
+![poly-regr-cross-validation](/assets/snips/runges_phenomenon/poly_regr_cross_validation.png)
 
 <hr>
 
