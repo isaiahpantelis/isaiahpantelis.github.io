@@ -189,9 +189,9 @@ For this example, I generated data on $$[-2,2]$$ and kept $$[-2,-1]\bigcup[1,2]$
 
 The code that performs the cross validation is short[^short-code] and straightforward:[^uv] [polynomial regression with cross validation](/assets/code/runges_phenomenon/poly_regr_cv.py)
 
-## Recap
+## Conclusion
 
-blah
+There is nothing new, really, in all of the above (is there anything new under the sun, anyway?). In fact, from a mathematical point of view, the whole thing seems rather trivial: polynomials are undbounded (on $$\mathbb{R}$$) and, therefore, necessarily diverge from any bounded function as $${\\|}x{\\|}$$ increases. The experiments were fun, though.
 
 <hr>
 Comments are welcome at pantelis dot isaiah at gmail dot com. If they are constructive, I will likely reply.
