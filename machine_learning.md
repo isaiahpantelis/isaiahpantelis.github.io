@@ -12,6 +12,11 @@ markdown: kramdown
   - [Runge's function](#runges-function)
   - [The problem](#the-problem)
   - [A classical solution to the problem](#a-classical-solution-to-the-problem)
+  - [A different problem](#a-different-problem)
+  - [Polynomial regression with cross-validation](#polynomial-regression-with-cross-validation)
+  - [To shuffle or not to shuffle](#to-shuffle-or-not-to-shuffle)
+  - [Yet another classical solution](#yet-another-classical-solution)
+  - [Overfitting](#overfitting)
 
 <hr>
 
