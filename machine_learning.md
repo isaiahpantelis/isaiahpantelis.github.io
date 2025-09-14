@@ -37,21 +37,28 @@ First, let's define Runge's function, which is the function he used as an exampl
 ![Runge's example function](/assets/snips/runges_phenomenon/runges_function_original.png)
 
 ```python
-def ground_truth(x: np.array, noise: bool = False, seed: int = None) -> pd.DataFrame:
+def ground_truth(
+    rng: np.random.default_rng,
+    x: np.array,
+    noise: bool = False,
+    seed: int = None,
+    noise_scale: float = 0.1
+) -> pd.DataFrame:
+
+    y = target(x)
 
     if noise:
-        if seed is None:
-            raise ValueError('If `noise is True` then `seed` has to a non-negative integer.')
-        rng = np.random.default_rng(seed=seed)
-        noise_vector = rng.normal(loc=0.0, scale=0.01, size=x.shape)
-    else:
-        noise_vector = np.zeros(shape=x.shape)
+        if seed is None or (not isinstance(noise_scale, float)):  # -- only checking for type, not valid values
+            raise ValueError('If `noise is True` then `seed` must be a non-negative integer and `noise_scale` must be a non-negative float.')
+        # -- Add noise proportionally because the function values tend to zero and, otherwise, will be buried in the noise. -- #
+        for k in range(y.shape[0]):
+            y[k] += rng.normal(loc=0.0, scale=noise_scale * y[k])
 
     return (
         pd
         .DataFrame({
             'x': x,
-            'y': np.vectorize(lambda t: 1 / (1 + 10 * t ** 2))(x) + noise_vector
+            'y': y
         })
         .sort_values(by=['x'])
         .reset_index(drop=True)
