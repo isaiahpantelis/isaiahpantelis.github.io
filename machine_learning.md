@@ -202,7 +202,7 @@ Comments are welcome at pantelis dot isaiah at gmail dot com. If they are constr
 [^1]: In this note, the focus is on real-valued functions of a single real variable.
 [^2]: The emphasis is mine.
 [^cheb-high-dim]: No, "tensor products" have not addressed the limitation.
-[^3]: Among other things, 18th century mathematicians believed that all functions are real analytic. And they would fight you for it.
+[^3]: Among other things, 18th-century mathematicians believed that all functions are real analytic. And they would fight you for it.
 [^5]: [Cargo cult science](https://people.cs.uchicago.edu/~ravenben/cargocult.html)
 [^6]: The fact that obvious relations can be defined between functions, such as a function $$f$$ being the **restriction** or the **continuation** of another function $$g$$ is a different story. One has to maintain clarity of thought.
 [^7]: I won't even bother showing the extrapolation using the Lagrange polynomial. As you can guess, it's abysmal.
