@@ -17,6 +17,7 @@ markdown: kramdown
   - [To shuffle or not to shuffle](#to-shuffle-or-not-to-shuffle)
   - [Yet another classical solution](#yet-another-classical-solution)
   - [Overfitting](#overfitting)
+  - [Conclusion](#conclusion)
 
 <hr>
 
