@@ -10,6 +10,8 @@ markdown: kramdown
 #### CONTENTS
 - [An old problem with an old solution](#an-old-problem-with-an-old-solution)
   - [Runge's function](#runges-function)
+  - [The problem](#the-problem)
+  - [A classical solution to the problem](#a-classical-solution-to-the-problem)
 
 <hr>
 
