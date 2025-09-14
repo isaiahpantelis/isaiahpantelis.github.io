@@ -173,7 +173,7 @@ The results are as follows:
 
 ![poly-regr-cross-validation](/assets/snips/runges_phenomenon/poly_regr_cross_validation.png)
 
-And the code is straightforward:[^uv]
+The code that performs the cross validation is short[^short-code] and straightforward:[^uv]
 
 ```python
 import matplotlib.pyplot as plt
@@ -351,4 +351,9 @@ if __name__ == '__main__':
 [^bernstein-polynomials]: For example, they allow for a constructive proof of the Weierstrass approximation theorem which, in turn, implies that $$C[a,b]$$ (continuous functions on $$[a,b]\subset\mathbb{R}$$) is separable. Moreover, if $$f$$ is increasing or convex, then so is $$B_n(f)$$, the $$n$$-th Bernstein polynomial. Another interesting property of the "Bernstein operator" $$B_n$$ is that it is contracting with respect to the total variation $$V(f)$$ of a function $$f$$, where $$V(f)\triangleq\int_a^b{\\|}f'(x){\\|}\mathrm{d}x$$.
 [^in-sample-perf]: According to *some* criterion.
 [^sklearn-critique]: Lately, it has become fashionable to bash `scikit-learn`. Bjarne Stroustroup has said about programming languages something along the lines of "there are languages that people complain about and languages that no one uses". The same can be said about libraries (or any other tool&mdash;it's a nice pearl of distilled wisdom).
+[^short-code]: Especially if you exclude the lines for cosmetic additions to the plots.
 [^uv]: Because I'm using `uv` for python projects&mdash;as most sane people do these days&mdash;the main part of the script is wrapped in a typical `run` function and the script is added to the section `project.scripts` of the project's `pyproject.toml`.
+
+<hr>
+
+Comments are welcome at pantelis dot isaiah at gmail dot com. If they are constructive, I will likely reply.
