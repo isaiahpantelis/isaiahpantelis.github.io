@@ -346,6 +346,8 @@ if __name__ == '__main__':
 blah
 
 <hr>
+Comments are welcome at pantelis dot isaiah at gmail dot com. If they are constructive, I will likely reply.
+<hr>
 
 #### FOOTNOTES
 
@@ -364,7 +366,3 @@ blah
 [^sklearn-critique]: Lately, it has become fashionable to bash `scikit-learn`. Bjarne Stroustroup has said about programming languages something along the lines of "there are languages that people complain about and languages that no one uses". The same can be said about libraries (or any other tool&mdash;it's a nice pearl of distilled wisdom).
 [^short-code]: Especially if you exclude the lines for cosmetic additions to the plots.
 [^uv]: Because I'm using `uv` for python projects&mdash;as most sane people do these days&mdash;the main part of the script is wrapped in a typical `run` function and the script is added to the section `project.scripts` of the project's `pyproject.toml`.
-
-<hr>
-
-Comments are welcome at pantelis dot isaiah at gmail dot com. If they are constructive, I will likely reply.
