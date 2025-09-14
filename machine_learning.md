@@ -192,7 +192,9 @@ The code that performs the cross validation is short[^short-code] and straightfo
 
 ## Conclusion
 
-There is nothing new, really, in all of the above (is there anything new under the sun, anyway?). In fact, from a mathematical point of view, the whole thing seems rather trivial: polynomials are undbounded (on $$\mathbb{R}$$) and, therefore, necessarily diverge from any bounded function as $${\\|}x{\\|}$$ increases. The experiments were fun, though.
+There is nothing new, really, in all of the above (is there anything new under the sun, anyway?). Any conclusions to be made are left to the reader.
+
+<!-- In fact, from a mathematical point of view, the whole thing seems rather trivial: polynomials are undbounded (on $$\mathbb{R}$$) and, therefore, necessarily diverge from any bounded function as $${\\|}x{\\|}$$ increases. The experiments were fun, though. -->
 
 <hr>
 Comments are welcome at pantelis dot isaiah at gmail dot com. If they are constructive, I will likely reply.
