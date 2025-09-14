@@ -192,7 +192,7 @@ The code that performs the cross validation is short[^short-code] and straightfo
 
 ## Conclusion
 
-There is nothing new, really, in all of the above (is there anything new under the sun, anyway?). My personal point of view, and gain from an exploration of this kind, is that revisiting the basics can lead to formulating better questions. But that's all for now.
+There is nothing new, really, in all of the above (is there anything new under the sun, anyway?). However, there is often a gain from revisiting the basics and that is the ability to formulate better questions. But that's all for now.
 
 <!-- In fact, from a mathematical point of view, the whole thing seems rather trivial: polynomials are undbounded (on $$\mathbb{R}$$) and, therefore, necessarily diverge from any bounded function as $${\\|}x{\\|}$$ increases. The experiments were fun, though. -->
 
