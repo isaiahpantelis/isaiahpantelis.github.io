@@ -154,7 +154,7 @@ In reality, the data generation mechanism is not known otherwise there wouldn't 
 
 ### Learning curves
 
-The mighty `scikit-learn` library[^sklearn-critique] provides various utilities for evaluating model calibration and performance. As a starting point, one can look at the documentation for [Model Selection](https://scikit-learn.org/stable/api/sklearn.model_selection.html). In what follows, we'll adopt the point of view who doesn't want to kknow about Analysis, Approimxation Theory, and especially about old French math textbooks. The question to answer is: *...to be continued*
+The mighty `scikit-learn` library[^sklearn-critique] provides various utilities for evaluating model calibration and performance. As a starting point, one can look at the documentation for [Model Selection](https://scikit-learn.org/stable/api/sklearn.model_selection.html). In what follows, we'll adopt the point of view of someone who doesn't want to know about Analysis, Approximation Theory, and especially about old French math textbooks. The question to answer is: 
 
 <hr>
 
